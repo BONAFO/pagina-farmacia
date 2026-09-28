@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Analgésicos"
+  },
+  {
+    "id": 2,
+    "name": "Antiinflamatorios"
+  },
+  {
+    "id": 3,
+    "name": "Antigripales"
+  },
+  {
+    "id": 4,
+    "name": "Digestivos"
+  },
+  {
+    "id": 5,
+    "name": "Antialérgicos"
+  },
+  {
+    "id": 6,
+    "name": "Vitaminas y suplementos"
+  },
+  {
+    "id": 7,
+    "name": "Higiene personal"
+  },
+  {
+    "id": 8,
+    "name": "Cuidado bucal"
+  },
+  {
+    "id": 9,
+    "name": "Cuidado de la piel"
+  },
+  {
+    "id": 10,
+    "name": "Protección solar"
+  },
+  {
+    "id": 11,
+    "name": "Primeros auxilios"
+  },
+  {
+    "id": 12,
+    "name": "Bebés y maternidad"
+  },
+  {
+    "id": 13,
+    "name": "Cuidado capilar"
+  },
+  {
+    "id": 14,
+    "name": "Higiene femenina"
+  },
+  {
+    "id": 15,
+    "name": "Accesorios y salud"
+  }
+]
