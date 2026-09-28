@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "name": "Control de presión arterial",
+    "description": "Medición de la presión arterial con equipamiento adecuado y orientación general sobre los valores obtenidos.",
+    "icon": "❤️"
+  },
+  {
+    "id": 2,
+    "name": "Control de glucemia",
+    "description": "Medición de glucosa en sangre mediante un control rápido y sencillo.",
+    "icon": "🩸"
+  },
+  {
+    "id": 3,
+    "name": "Aplicación de inyecciones",
+    "description": "Servicio de aplicación de medicamentos inyectables según indicación profesional y normativa vigente.",
+    "icon": "💉"
+  },
+  {
+    "id": 4,
+    "name": "Aplicación de vacunas",
+    "description": "Aplicación de vacunas disponibles en la farmacia según las condiciones y requisitos correspondientes.",
+    "icon": "🛡️"
+  },
+  {
+    "id": 5,
+    "name": "Asesoramiento farmacéutico",
+    "description": "Orientación sobre el uso adecuado de medicamentos y productos de venta libre.",
+    "icon": "👨‍⚕️"
+  },
+  {
+    "id": 6,
+    "name": "Control de peso",
+    "description": "Medición del peso corporal mediante balanza digital disponible en el establecimiento.",
+    "icon": "⚖️"
+  },
+  {
+    "id": 7,
+    "name": "Toma de temperatura",
+    "description": "Control de temperatura corporal utilizando termómetros digitales.",
+    "icon": "🌡️"
+  },
+  {
+    "id": 8,
+    "name": "Preparación de pedidos",
+    "description": "Preparación de pedidos para retirar en el establecimiento de manera rápida y organizada.",
+    "icon": "📦"
+  },
+  {
+    "id": 9,
+    "name": "Entrega a domicilio",
+    "description": "Entrega de productos disponibles en el catálogo dentro de la zona de cobertura.",
+    "icon": "🚚"
+  },
+  {
+    "id": 10,
+    "name": "Asesoramiento en cuidado personal",
+    "description": "Ayuda para seleccionar productos de higiene, cuidado de la piel, cabello y bienestar personal.",
+    "icon": "✨"
+  },
+  {
+    "id": 11,
+    "name": "Orientación sobre primeros auxilios",
+    "description": "Asesoramiento general para seleccionar elementos básicos de primeros auxilios.",
+    "icon": "🩹"
+  },
+  {
+    "id": 12,
+    "name": "Consulta de disponibilidad",
+    "description": "Consulta sobre disponibilidad de medicamentos, productos de farmacia y artículos de cuidado personal.",
+    "icon": "🔎"
+  }
+]
+

@@ -1,0 +1,804 @@
+
+[
+  {
+    "id": 1,
+    "name": "Paracetamol 500 mg x 20 comprimidos",
+    "brand": "Genérico",
+    "categoryId": 1,
+    "price": 3200,
+    "image": "/products/paracetamol-500.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Paracetamol 1 g x 10 comprimidos",
+    "brand": "Genérico",
+    "categoryId": 1,
+    "price": 4100,
+    "image": "/products/paracetamol-1g.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Paracetamol 500 mg x 50 comprimidos",
+    "brand": "Genérico",
+    "categoryId": 1,
+    "price": 6200,
+    "image": "/products/paracetamol-50.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Dipirona 500 mg x 20 comprimidos",
+    "brand": "Genérico",
+    "categoryId": 1,
+    "price": 3900,
+    "image": "/products/dipirona.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Dipirona 500 mg x 30 comprimidos",
+    "brand": "Genérico",
+    "categoryId": 1,
+    "price": 5100,
+    "image": "/products/dipirona-30.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Ibuprofeno 400 mg x 20 comprimidos",
+    "brand": "Genérico",
+    "categoryId": 2,
+    "price": 4500,
+    "image": "/products/ibuprofeno-400.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Ibuprofeno 600 mg x 20 comprimidos",
+    "brand": "Genérico",
+    "categoryId": 2,
+    "price": 5600,
+    "image": "/products/ibuprofeno-600.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Ibuprofeno 400 mg x 50 comprimidos",
+    "brand": "Genérico",
+    "categoryId": 2,
+    "price": 8900,
+    "image": "/products/ibuprofeno-50.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Naproxeno 550 mg x 10 comprimidos",
+    "brand": "Genérico",
+    "categoryId": 2,
+    "price": 4700,
+    "image": "/products/naproxeno.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Diclofenac 50 mg x 20 comprimidos",
+    "brand": "Genérico",
+    "categoryId": 2,
+    "price": 4300,
+    "image": "/products/diclofenac.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Antigripal Día x 10 comprimidos",
+    "brand": "FarmaPlus",
+    "categoryId": 3,
+    "price": 5200,
+    "image": "/products/antigripal-dia.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Antigripal Noche x 10 comprimidos",
+    "brand": "FarmaPlus",
+    "categoryId": 3,
+    "price": 5500,
+    "image": "/products/antigripal-noche.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Antigripal Forte x 20 comprimidos",
+    "brand": "FarmaPlus",
+    "categoryId": 3,
+    "price": 6900,
+    "image": "/products/antigripal-forte.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Jarabe para la tos 120 ml",
+    "brand": "FarmaPlus",
+    "categoryId": 3,
+    "price": 4800,
+    "image": "/products/jarabe-tos.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Pastillas para la garganta x 24",
+    "brand": "FarmaPlus",
+    "categoryId": 3,
+    "price": 3600,
+    "image": "/products/pastillas-garganta.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Antiácido masticable x 20",
+    "brand": "Digest",
+    "categoryId": 4,
+    "price": 3400,
+    "image": "/products/antiacido.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Sales digestivas x 10 sobres",
+    "brand": "Digest",
+    "categoryId": 4,
+    "price": 2900,
+    "image": "/products/sales-digestivas.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Simeticona 40 mg x 20 comprimidos",
+    "brand": "Genérico",
+    "categoryId": 4,
+    "price": 3800,
+    "image": "/products/simeticona.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Laxante suave x 20 comprimidos",
+    "brand": "Digest",
+    "categoryId": 4,
+    "price": 4100,
+    "image": "/products/laxante.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Fibra digestiva x 20 sobres",
+    "brand": "NaturalLife",
+    "categoryId": 4,
+    "price": 7200,
+    "image": "/products/fibra.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Loratadina 10 mg x 10 comprimidos",
+    "brand": "Genérico",
+    "categoryId": 5,
+    "price": 3600,
+    "image": "/products/loratadina.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Cetirizina 10 mg x 10 comprimidos",
+    "brand": "Genérico",
+    "categoryId": 5,
+    "price": 3900,
+    "image": "/products/cetirizina.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Antialérgico 10 mg x 20 comprimidos",
+    "brand": "FarmaPlus",
+    "categoryId": 5,
+    "price": 5200,
+    "image": "/products/antialergico.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Spray nasal descongestivo 20 ml",
+    "brand": "FarmaPlus",
+    "categoryId": 5,
+    "price": 4300,
+    "image": "/products/spray-nasal.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Solución nasal 30 ml",
+    "brand": "FarmaPlus",
+    "categoryId": 5,
+    "price": 3200,
+    "image": "/products/solucion-nasal.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Vitamina C 500 mg x 30 comprimidos",
+    "brand": "VitaPlus",
+    "categoryId": 6,
+    "price": 5800,
+    "image": "/products/vitamina-c.jpg"
+  },
+  {
+    "id": 27,
+    "name": "Vitamina C 1 g x 20 comprimidos",
+    "brand": "VitaPlus",
+    "categoryId": 6,
+    "price": 6900,
+    "image": "/products/vitamina-c-1g.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Complejo B x 30 comprimidos",
+    "brand": "VitaPlus",
+    "categoryId": 6,
+    "price": 6100,
+    "image": "/products/complejo-b.jpg"
+  },
+  {
+    "id": 29,
+    "name": "Multivitamínico adulto x 30",
+    "brand": "VitaPlus",
+    "categoryId": 6,
+    "price": 8500,
+    "image": "/products/multivitaminico.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Magnesio x 60 cápsulas",
+    "brand": "VitaPlus",
+    "categoryId": 6,
+    "price": 9200,
+    "image": "/products/magnesio.jpg"
+  },
+  {
+    "id": 31,
+    "name": "Alcohol en gel 250 ml",
+    "brand": "CleanCare",
+    "categoryId": 7,
+    "price": 2800,
+    "image": "/products/alcohol-gel.jpg"
+  },
+  {
+    "id": 32,
+    "name": "Jabón líquido 250 ml",
+    "brand": "CleanCare",
+    "categoryId": 7,
+    "price": 3100,
+    "image": "/products/jabon-liquido.jpg"
+  },
+  {
+    "id": 33,
+    "name": "Jabón antibacterial x 90 g",
+    "brand": "CleanCare",
+    "categoryId": 7,
+    "price": 1900,
+    "image": "/products/jabon-antibacterial.jpg"
+  },
+  {
+    "id": 34,
+    "name": "Desodorante aerosol 150 ml",
+    "brand": "Fresh",
+    "categoryId": 7,
+    "price": 4200,
+    "image": "/products/desodorante.jpg"
+  },
+  {
+    "id": 35,
+    "name": "Desodorante roll-on 50 ml",
+    "brand": "Fresh",
+    "categoryId": 7,
+    "price": 3500,
+    "image": "/products/desodorante-rollon.jpg"
+  },
+  {
+    "id": 36,
+    "name": "Pasta dental protección completa 90 g",
+    "brand": "DentCare",
+    "categoryId": 8,
+    "price": 3300,
+    "image": "/products/pasta-dental.jpg"
+  },
+  {
+    "id": 37,
+    "name": "Pasta dental blanqueadora 90 g",
+    "brand": "DentCare",
+    "categoryId": 8,
+    "price": 3900,
+    "image": "/products/pasta-blanqueadora.jpg"
+  },
+  {
+    "id": 38,
+    "name": "Cepillo dental suave",
+    "brand": "DentCare",
+    "categoryId": 8,
+    "price": 2800,
+    "image": "/products/cepillo-suave.jpg"
+  },
+  {
+    "id": 39,
+    "name": "Cepillo dental medio",
+    "brand": "DentCare",
+    "categoryId": 8,
+    "price": 2800,
+    "image": "/products/cepillo-medio.jpg"
+  },
+  {
+    "id": 40,
+    "name": "Hilo dental 50 m",
+    "brand": "DentCare",
+    "categoryId": 8,
+    "price": 2600,
+    "image": "/products/hilo-dental.jpg"
+  },
+  {
+    "id": 41,
+    "name": "Crema hidratante facial 50 g",
+    "brand": "DermaCare",
+    "categoryId": 9,
+    "price": 7600,
+    "image": "/products/crema-facial.jpg"
+  },
+  {
+    "id": 42,
+    "name": "Crema hidratante corporal 200 ml",
+    "brand": "DermaCare",
+    "categoryId": 9,
+    "price": 6900,
+    "image": "/products/crema-corporal.jpg"
+  },
+  {
+    "id": 43,
+    "name": "Gel limpiador facial 150 ml",
+    "brand": "DermaCare",
+    "categoryId": 9,
+    "price": 7200,
+    "image": "/products/gel-facial.jpg"
+  },
+  {
+    "id": 44,
+    "name": "Crema para manos 100 g",
+    "brand": "DermaCare",
+    "categoryId": 9,
+    "price": 3900,
+    "image": "/products/crema-manos.jpg"
+  },
+  {
+    "id": 45,
+    "name": "Bálsamo labial hidratante",
+    "brand": "DermaCare",
+    "categoryId": 9,
+    "price": 2500,
+    "image": "/products/balsamo-labial.jpg"
+  },
+  {
+    "id": 46,
+    "name": "Protector solar FPS 30 120 ml",
+    "brand": "SunCare",
+    "categoryId": 10,
+    "price": 9800,
+    "image": "/products/protector-fps30.jpg"
+  },
+  {
+    "id": 47,
+    "name": "Protector solar FPS 50 120 ml",
+    "brand": "SunCare",
+    "categoryId": 10,
+    "price": 11500,
+    "image": "/products/protector-fps50.jpg"
+  },
+  {
+    "id": 48,
+    "name": "Protector solar infantil FPS 50",
+    "brand": "SunCare",
+    "categoryId": 10,
+    "price": 12500,
+    "image": "/products/protector-infantil.jpg"
+  },
+  {
+    "id": 49,
+    "name": "Protector solar facial FPS 50",
+    "brand": "SunCare",
+    "categoryId": 10,
+    "price": 10900,
+    "image": "/products/protector-facial.jpg"
+  },
+  {
+    "id": 50,
+    "name": "Protector labial FPS 30",
+    "brand": "SunCare",
+    "categoryId": 10,
+    "price": 3600,
+    "image": "/products/protector-labial.jpg"
+  },
+  {
+    "id": 51,
+    "name": "Curitas adhesivas x 20",
+    "brand": "FirstCare",
+    "categoryId": 11,
+    "price": 2400,
+    "image": "/products/curitas.jpg"
+  },
+  {
+    "id": 52,
+    "name": "Gasa estéril 10 x 10 cm x 10",
+    "brand": "FirstCare",
+    "categoryId": 11,
+    "price": 2900,
+    "image": "/products/gasa-esteril.jpg"
+  },
+  {
+    "id": 53,
+    "name": "Venda elástica 5 cm",
+    "brand": "FirstCare",
+    "categoryId": 11,
+    "price": 3200,
+    "image": "/products/venda.jpg"
+  },
+  {
+    "id": 54,
+    "name": "Cinta adhesiva médica 5 m",
+    "brand": "FirstCare",
+    "categoryId": 11,
+    "price": 3100,
+    "image": "/products/cinta-medica.jpg"
+  },
+  {
+    "id": 55,
+    "name": "Agua oxigenada 10 volúmenes 100 ml",
+    "brand": "FirstCare",
+    "categoryId": 11,
+    "price": 2100,
+    "image": "/products/agua-oxigenada.jpg"
+  },
+  {
+    "id": 56,
+    "name": "Pañales bebé talle P x 20",
+    "brand": "BabyCare",
+    "categoryId": 12,
+    "price": 8900,
+    "image": "/products/panales-p.jpg"
+  },
+  {
+    "id": 57,
+    "name": "Pañales bebé talle M x 20",
+    "brand": "BabyCare",
+    "categoryId": 12,
+    "price": 9400,
+    "image": "/products/panales-m.jpg"
+  },
+  {
+    "id": 58,
+    "name": "Pañales bebé talle G x 20",
+    "brand": "BabyCare",
+    "categoryId": 12,
+    "price": 9900,
+    "image": "/products/panales-g.jpg"
+  },
+  {
+    "id": 59,
+    "name": "Toallitas húmedas x 80",
+    "brand": "BabyCare",
+    "categoryId": 12,
+    "price": 3500,
+    "image": "/products/toallitas-bebe.jpg"
+  },
+  {
+    "id": 60,
+    "name": "Crema protectora para bebé 100 g",
+    "brand": "BabyCare",
+    "categoryId": 12,
+    "price": 5200,
+    "image": "/products/crema-bebe.jpg"
+  },
+  {
+    "id": 61,
+    "name": "Shampoo uso diario 400 ml",
+    "brand": "HairCare",
+    "categoryId": 13,
+    "price": 4900,
+    "image": "/products/shampoo.jpg"
+  },
+  {
+    "id": 62,
+    "name": "Shampoo anticaspa 400 ml",
+    "brand": "HairCare",
+    "categoryId": 13,
+    "price": 6200,
+    "image": "/products/shampoo-anticaspa.jpg"
+  },
+  {
+    "id": 63,
+    "name": "Acondicionador 400 ml",
+    "brand": "HairCare",
+    "categoryId": 13,
+    "price": 5100,
+    "image": "/products/acondicionador.jpg"
+  },
+  {
+    "id": 64,
+    "name": "Crema de peinar 300 ml",
+    "brand": "HairCare",
+    "categoryId": 13,
+    "price": 4600,
+    "image": "/products/crema-peinar.jpg"
+  },
+  {
+    "id": 65,
+    "name": "Tratamiento capilar 250 ml",
+    "brand": "HairCare",
+    "categoryId": 13,
+    "price": 5900,
+    "image": "/products/tratamiento-capilar.jpg"
+  },
+  {
+    "id": 66,
+    "name": "Toallitas femeninas normales x 16",
+    "brand": "FemCare",
+    "categoryId": 14,
+    "price": 3600,
+    "image": "/products/toallitas-normales.jpg"
+  },
+  {
+    "id": 67,
+    "name": "Toallitas femeninas nocturnas x 12",
+    "brand": "FemCare",
+    "categoryId": 14,
+    "price": 3900,
+    "image": "/products/toallitas-nocturnas.jpg"
+  },
+  {
+    "id": 68,
+    "name": "Protector diario x 20",
+    "brand": "FemCare",
+    "categoryId": 14,
+    "price": 3200,
+    "image": "/products/protectores-diarios.jpg"
+  },
+  {
+    "id": 69,
+    "name": "Tampones regulares x 16",
+    "brand": "FemCare",
+    "categoryId": 14,
+    "price": 4300,
+    "image": "/products/tampones.jpg"
+  },
+  {
+    "id": 70,
+    "name": "Gel de higiene íntima 200 ml",
+    "brand": "FemCare",
+    "categoryId": 14,
+    "price": 4800,
+    "image": "/products/gel-intimo.jpg"
+  },
+  {
+    "id": 71,
+    "name": "Termómetro digital",
+    "brand": "HealthTech",
+    "categoryId": 15,
+    "price": 6800,
+    "image": "/products/termometro.jpg"
+  },
+  {
+    "id": 72,
+    "name": "Tensiómetro digital de brazo",
+    "brand": "HealthTech",
+    "categoryId": 15,
+    "price": 28500,
+    "image": "/products/tensiometro.jpg"
+  },
+  {
+    "id": 73,
+    "name": "Oxímetro de pulso",
+    "brand": "HealthTech",
+    "categoryId": 15,
+    "price": 17900,
+    "image": "/products/oximetro.jpg"
+  },
+  {
+    "id": 74,
+    "name": "Jeringas descartables 5 ml x 10",
+    "brand": "HealthTech",
+    "categoryId": 15,
+    "price": 4200,
+    "image": "/products/jeringas.jpg"
+  },
+  {
+    "id": 75,
+    "name": "Guantes de nitrilo x 20",
+    "brand": "HealthTech",
+    "categoryId": 15,
+    "price": 5600,
+    "image": "/products/guantes-nitrilo.jpg"
+  },
+  {
+    "id": 76,
+    "name": "Paracetamol infantil suspensión 100 ml",
+    "brand": "Genérico",
+    "categoryId": 1,
+    "price": 4300,
+    "image": "/products/paracetamol-infantil.jpg"
+  },
+  {
+    "id": 77,
+    "name": "Ibuprofeno suspensión infantil 100 ml",
+    "brand": "Genérico",
+    "categoryId": 2,
+    "price": 4700,
+    "image": "/products/ibuprofeno-infantil.jpg"
+  },
+  {
+    "id": 78,
+    "name": "Crema para golpes 60 g",
+    "brand": "DermaCare",
+    "categoryId": 9,
+    "price": 5400,
+    "image": "/products/crema-golpes.jpg"
+  },
+  {
+    "id": 79,
+    "name": "Gel refrescante muscular 100 g",
+    "brand": "DermaCare",
+    "categoryId": 9,
+    "price": 5900,
+    "image": "/products/gel-muscular.jpg"
+  },
+  {
+    "id": 80,
+    "name": "Solución fisiológica 500 ml",
+    "brand": "FirstCare",
+    "categoryId": 11,
+    "price": 3400,
+    "image": "/products/solucion-fisiologica.jpg"
+  },
+  {
+    "id": 81,
+    "name": "Algodón hidrófilo 100 g",
+    "brand": "FirstCare",
+    "categoryId": 11,
+    "price": 2700,
+    "image": "/products/algodon.jpg"
+  },
+  {
+    "id": 82,
+    "name": "Agua micelar 250 ml",
+    "brand": "DermaCare",
+    "categoryId": 9,
+    "price": 5800,
+    "image": "/products/agua-micelar.jpg"
+  },
+  {
+    "id": 83,
+    "name": "Crema nutritiva facial 50 g",
+    "brand": "DermaCare",
+    "categoryId": 9,
+    "price": 7900,
+    "image": "/products/crema-nutritiva.jpg"
+  },
+  {
+    "id": 84,
+    "name": "Vitamina D x 30 cápsulas",
+    "brand": "VitaPlus",
+    "categoryId": 6,
+    "price": 6700,
+    "image": "/products/vitamina-d.jpg"
+  },
+  {
+    "id": 85,
+    "name": "Zinc x 30 comprimidos",
+    "brand": "VitaPlus",
+    "categoryId": 6,
+    "price": 5400,
+    "image": "/products/zinc.jpg"
+  },
+  {
+    "id": 86,
+    "name": "Omega 3 x 60 cápsulas",
+    "brand": "VitaPlus",
+    "categoryId": 6,
+    "price": 9800,
+    "image": "/products/omega-3.jpg"
+  },
+  {
+    "id": 87,
+    "name": "Colutorio bucal 500 ml",
+    "brand": "DentCare",
+    "categoryId": 8,
+    "price": 4700,
+    "image": "/products/colutorio.jpg"
+  },
+  {
+    "id": 88,
+    "name": "Cepillo dental infantil",
+    "brand": "DentCare",
+    "categoryId": 8,
+    "price": 2500,
+    "image": "/products/cepillo-infantil.jpg"
+  },
+  {
+    "id": 89,
+    "name": "Crema dental infantil 60 g",
+    "brand": "DentCare",
+    "categoryId": 8,
+    "price": 2900,
+    "image": "/products/pasta-infantil.jpg"
+  },
+  {
+    "id": 90,
+    "name": "Jabón líquido antibacterial 500 ml",
+    "brand": "CleanCare",
+    "categoryId": 7,
+    "price": 4500,
+    "image": "/products/jabon-antibacterial-liquido.jpg"
+  },
+  {
+    "id": 91,
+    "name": "Shampoo infantil 400 ml",
+    "brand": "BabyCare",
+    "categoryId": 12,
+    "price": 4800,
+    "image": "/products/shampoo-infantil.jpg"
+  },
+  {
+    "id": 92,
+    "name": "Colonia infantil 200 ml",
+    "brand": "BabyCare",
+    "categoryId": 12,
+    "price": 4200,
+    "image": "/products/colonia-infantil.jpg"
+  },
+  {
+    "id": 93,
+    "name": "Crema de manos reparadora 100 g",
+    "brand": "DermaCare",
+    "categoryId": 9,
+    "price": 4300,
+    "image": "/products/crema-manos-reparadora.jpg"
+  },
+  {
+    "id": 94,
+    "name": "Protector solar FPS 50 200 ml",
+    "brand": "SunCare",
+    "categoryId": 10,
+    "price": 13900,
+    "image": "/products/protector-fps50-200.jpg"
+  },
+  {
+    "id": 95,
+    "name": "Repelente corporal 200 ml",
+    "brand": "SunCare",
+    "categoryId": 10,
+    "price": 5200,
+    "image": "/products/repelente.jpg"
+  },
+  {
+    "id": 96,
+    "name": "Mascarillas descartables x 10",
+    "brand": "HealthTech",
+    "categoryId": 15,
+    "price": 3200,
+    "image": "/products/mascarillas.jpg"
+  },
+  {
+    "id": 97,
+    "name": "Balanza digital personal",
+    "brand": "HealthTech",
+    "categoryId": 15,
+    "price": 18900,
+    "image": "/products/balanza.jpg"
+  },
+  {
+    "id": 98,
+    "name": "Bolsa de frío instantáneo",
+    "brand": "FirstCare",
+    "categoryId": 11,
+    "price": 3900,
+    "image": "/products/frio-instantaneo.jpg"
+  },
+  {
+    "id": 99,
+    "name": "Termómetro infrarrojo",
+    "brand": "HealthTech",
+    "categoryId": 15,
+    "price": 15900,
+    "image": "/products/termometro-infrarrojo.jpg"
+  },
+  {
+    "id": 100,
+    "name": "Alcohol etílico 96° 250 ml",
+    "brand": "FirstCare",
+    "categoryId": 11,
+    "price": 2600,
+    "image": "/products/alcohol-etilico.jpg"
+  }
+]
+
