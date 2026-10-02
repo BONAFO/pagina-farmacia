@@ -6,55 +6,25 @@ const NavigationContext = createContext();
 
 const navigation = {
   categories: [
-    {
-      name: "Farmacia",
-      path: "/products/?category=farmacia",
-    },
-    {
-      name: "Cuidado personal",
-      path: "/products/?category=cuidado-personal",
-    },
-    {
-      name: "Dermocosmética",
-      path: "/products/?category=dermocosmetica",
-    },
-    {
-      name: "Belleza",
-      path: "/products/?category=belleza",
-    },
-    {
-      name: "Bebés y maternidad",
-      path: "/products/?category=bebes-maternidad",
-    },
-    {
-      name: "Bienestar",
-      path: "/products/?category=bienestar",
-    },
-    {
-      name: "Ofertas",
-      path: "/products/?category=ofertas",
-    },
+    { name: "Farmacia", slug: "farmacia" },
+    { name: "Cuidado personal", slug: "cuidado-personal" },
+    { name: "Dermocosmética", slug: "dermocosmetica" },
+    { name: "Belleza", slug: "belleza" },
+    { name: "Bebés y maternidad", slug: "bebes-maternidad" },
+    { name: "Bienestar", slug: "bienestar" },
+    { name: "Ofertas", slug: "ofertas" },
   ],
 
   pages: [
-    {
-      name: "Inicio",
-      path: "/",
-    },
-    {
-      name: "Servicios",
-      path: "/services/",
-    },
-    {
-      name: "La farmacia",
-      path: "/about/",
-    },
-    {
-      name: "Ayuda",
-      path: "/contact/",
-    },
+    { name: "home", path: "/" },
+    { name: "services", path: "/services" },
+    { name: "La farmacia", path: "/about" },
+    { name: "contact", path: "/contact" },
+        { name: "Products", path: "/contact" },
+
   ],
 };
+
 
 export function NavigationProvider({ children }) {
   return (
@@ -67,3 +37,6 @@ export function NavigationProvider({ children }) {
 export function useNavigation() {
   return useContext(NavigationContext);
 }
+
+
+

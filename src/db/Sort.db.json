@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "Nombre: A-Z", "value": "name-asc" },
+  { "id": 2, "name": "Nombre: Z-A", "value": "name-desc" },
+  { "id": 3, "name": "Precio: menor a mayor", "value": "price-asc" },
+  { "id": 4, "name": "Precio: mayor a menor", "value": "price-desc" },
+  { "id": 5, "name": "Más nuevos", "value": "newest" },
+  { "id": 6, "name": "Más antiguos", "value": "oldest" }
+]
