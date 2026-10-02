@@ -23,12 +23,11 @@ export default function DemoModal({ isOpen, onClose, title, message }) {
         {/* CONTENT */}
         <div className="mt-5 text-center">
           <h2 className="text-xl font-bold text-zinc-900">
-            {title || "Esto es una demostración"}
+            {title}
           </h2>
 
           <p className="mt-3 text-sm leading-6 text-zinc-500">
-            {message ||
-              "Esta función forma parte de la demostración y no realiza ninguna operación real."}
+            {message}
           </p>
         </div>
 

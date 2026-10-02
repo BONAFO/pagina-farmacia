@@ -4,6 +4,12 @@
 import { useRouter } from "next/navigation";
 import { useNavigation } from "../context/NavigationContext";
 import t from "@/src/translations/Footer";
+import {
+  useCategoryNavigationHook,
+  useNavigationHook,
+} from "../hooks/Navigation";
+import categories from "../db/Categories.db.json";
+import products from "../db/Products.db.json";
 
 /**
  * Footer
@@ -21,11 +27,27 @@ import t from "@/src/translations/Footer";
 export default function Footer() {
   const router = useRouter();
 
-  const { categories, pages } = useNavigation();
+  const { pages } = useNavigation();
+
+  const mainCategories = categories
+    .map((category) => ({
+      ...category,
+      productCount: products.filter(
+        (product) => product.categoryId === category.id,
+      ).length,
+    }))
+    .filter(
+      (category) =>
+        category.productCount > 0 && category.name.toLowerCase() !== "ofertas",
+    )
+    .sort((a, b) => b.productCount - a.productCount)
+    .slice(0, 6);
+
+  const homePath = useNavigationHook("home");
+
+  const categoryNavigation = useCategoryNavigationHook();
 
   
-  
-
   return (
     <footer className="border-t border-emerald-900 bg-emerald-950 text-white">
       <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-10">
@@ -34,7 +56,7 @@ export default function Footer() {
           <div>
             <button
               type="button"
-              onClick={() => router.push(pages.find((page) => page.name === "home")?.path)}
+              onClick={() => router.push(homePath)}
               className="flex cursor-pointer items-center gap-2 text-left text-lg font-bold"
             >
               <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-500 text-lg">
@@ -56,14 +78,14 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               {t.categoriesTitle}
-            </h3> 
+            </h3>
 
             <div className="mt-4 flex flex-col gap-3">
-              {categories.map((category) => (
+              {mainCategories.map((category) => (
                 <button
                   key={category.path}
                   type="button"
-                  onClick={() => navigate(category.path)}
+                  onClick={() => router.push(categoryNavigation(category))}
                   className="w-fit cursor-pointer text-left text-sm text-emerald-100/60 transition hover:text-emerald-400"
                 >
                   {category.name}
@@ -81,12 +103,12 @@ export default function Footer() {
             <div className="mt-4 flex flex-col gap-3">
               {pages.map((page) => (
                 <button
-                  key={page.path}
+                  key={page.slug}
                   type="button"
                   onClick={() => navigate(page.path)}
                   className="w-fit cursor-pointer text-left text-sm text-emerald-100/60 transition hover:text-emerald-400"
                 >
-                  {page.name}
+                  {page.slug}
                 </button>
               ))}
             </div>

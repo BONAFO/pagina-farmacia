@@ -1,8 +1,8 @@
-import Register from "@/src/components/Register";
+import RegisterContainer from "@/src/containers/RegisterContainer";
 
 
 export default function RegisterPage() {
   return (
-      <Register />
+      <RegisterContainer />
   );
 }

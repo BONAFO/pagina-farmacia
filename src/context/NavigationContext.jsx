@@ -16,15 +16,16 @@ const navigation = {
   ],
 
   pages: [
-    { name: "home", path: "/" },
-    { name: "services", path: "/services" },
-    { name: "La farmacia", path: "/about" },
-    { name: "contact", path: "/contact" },
-        { name: "Products", path: "/contact" },
-
+    { name: "home", path: "/", slug: "Inicio" },
+    { name: "services", path: "/services", slug: "Servicios" },
+    { name: "about", path: "/about", slug: "Nosotros" },
+    { name: "contact", path: "/contact", slug: "Contacto" },
+    { name: "register", path: "/register", slug: "Registrarse" },
+    { name: "login", path: "/login", slug: "Ingresar" },
+    { name: "shipping", path: "/shipping", slug: "Envío" },
+    { name: "products", path: "/products", slug: "Productos" },
   ],
 };
-
 
 export function NavigationProvider({ children }) {
   return (
@@ -37,6 +38,3 @@ export function NavigationProvider({ children }) {
 export function useNavigation() {
   return useContext(NavigationContext);
 }
-
-
-
