@@ -1,8 +1,21 @@
+// src/components/Register.jsx
 "use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import DemoModal from "../layouts/DemoModal";
+import t from "@/src/translations/Register";
+
+/**
+ * Register
+ *
+ * Los textos e íconos viven en src/translations/Register.js. Acá quedan las
+ * clases, las rutas y la lógica.
+ *
+ * Demo: no hay registro real. Los campos bloqueados (readOnly) abren
+ * DemoModal al recibir el foco (t.modal.lockedField) y el envío del
+ * formulario también (t.modal.register).
+ */
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
@@ -28,19 +41,13 @@ export default function Register() {
   const handleLockedFieldFocus = (event) => {
     event.currentTarget.blur();
 
-    openModal(
-      "Dato no disponible",
-      "Este campo forma parte de la demostración y todavía no se puede completar.",
-    );
+    openModal(t.modal.lockedField.title, t.modal.lockedField.message);
   };
 
   const handleRegister = (event) => {
     event.preventDefault();
 
-    openModal(
-      "Crear cuenta",
-      "La creación de cuentas no está disponible en esta demostración.",
-    );
+    openModal(t.modal.register.title, t.modal.register.message);
   };
 
   return (
@@ -51,16 +58,16 @@ export default function Register() {
           <div className="flex justify-center">
             <div className="flex items-center gap-3">
               <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-600 text-3xl font-bold text-white shadow-sm">
-                +
+                {t.brand.logo}
               </span>
 
               <div className="leading-none">
                 <span className="block text-lg font-bold tracking-tight text-zinc-900">
-                  FARMACIA
+                  {t.brand.first}
                 </span>
 
                 <span className="block text-lg font-bold tracking-tight text-emerald-600">
-                  SALUD
+                  {t.brand.second}
                 </span>
               </div>
             </div>
@@ -68,11 +75,9 @@ export default function Register() {
 
           {/* TITLE */}
           <div className="mt-8 text-center">
-            <h1 className="text-2xl font-bold text-zinc-900">Crear cuenta</h1>
+            <h1 className="text-2xl font-bold text-zinc-900">{t.title}</h1>
 
-            <p className="mt-2 text-sm text-zinc-500">
-              Completá tus datos para crear tu espacio en Farmacia Salud.
-            </p>
+            <p className="mt-2 text-sm text-zinc-500">{t.subtitle}</p>
           </div>
 
           {/* FORM */}
@@ -84,14 +89,14 @@ export default function Register() {
                   htmlFor="name"
                   className="mb-2 block text-sm font-medium text-zinc-700"
                 >
-                  Nombre
+                  {t.fields.name.label}
                 </label>
 
                 <input
                   id="name"
                   name="name"
                   type="text"
-                  placeholder="Tu nombre"
+                  placeholder={t.fields.name.placeholder}
                   readOnly
                   onFocus={handleLockedFieldFocus}
                   className="h-12 w-full cursor-pointer rounded-xl border border-emerald-200 bg-zinc-50 px-4 text-sm text-zinc-500 outline-none transition hover:border-emerald-300 focus:border-emerald-400"
@@ -103,14 +108,14 @@ export default function Register() {
                   htmlFor="lastName"
                   className="mb-2 block text-sm font-medium text-zinc-700"
                 >
-                  Apellido
+                  {t.fields.lastName.label}
                 </label>
 
                 <input
                   id="lastName"
                   name="lastName"
                   type="text"
-                  placeholder="Tu apellido"
+                  placeholder={t.fields.lastName.placeholder}
                   readOnly
                   onFocus={handleLockedFieldFocus}
                   className="h-12 w-full cursor-pointer rounded-xl border border-emerald-200 bg-zinc-50 px-4 text-sm text-zinc-500 outline-none transition hover:border-emerald-300 focus:border-emerald-400"
@@ -125,7 +130,7 @@ export default function Register() {
                   htmlFor="dni"
                   className="mb-2 block text-sm font-medium text-zinc-700"
                 >
-                  DNI
+                  {t.fields.dni.label}
                 </label>
 
                 <input
@@ -133,7 +138,7 @@ export default function Register() {
                   name="dni"
                   type="text"
                   inputMode="numeric"
-                  placeholder="Ej. 12345678"
+                  placeholder={t.fields.dni.placeholder}
                   readOnly
                   onFocus={handleLockedFieldFocus}
                   className="h-12 w-full cursor-pointer rounded-xl border border-emerald-200 bg-zinc-50 px-4 text-sm text-zinc-500 outline-none transition hover:border-emerald-300 focus:border-emerald-400"
@@ -145,14 +150,14 @@ export default function Register() {
                   htmlFor="phone"
                   className="mb-2 block text-sm font-medium text-zinc-700"
                 >
-                  Teléfono
+                  {t.fields.phone.label}
                 </label>
 
                 <input
                   id="phone"
                   name="phone"
                   type="tel"
-                  placeholder="+54 9 ..."
+                  placeholder={t.fields.phone.placeholder}
                   readOnly
                   onFocus={handleLockedFieldFocus}
                   className="h-12 w-full cursor-pointer rounded-xl border border-emerald-200 bg-zinc-50 px-4 text-sm text-zinc-500 outline-none transition hover:border-emerald-300 focus:border-emerald-400"
@@ -166,7 +171,7 @@ export default function Register() {
                 htmlFor="birthDate"
                 className="mb-2 block text-sm font-medium text-zinc-700"
               >
-                Fecha de nacimiento
+                {t.fields.birthDate.label}
               </label>
 
               <input
@@ -185,14 +190,14 @@ export default function Register() {
                 htmlFor="address"
                 className="mb-2 block text-sm font-medium text-zinc-700"
               >
-                Dirección
+                {t.fields.address.label}
               </label>
 
               <input
                 id="address"
                 name="address"
                 type="text"
-                placeholder="Calle y número"
+                placeholder={t.fields.address.placeholder}
                 readOnly
                 onFocus={handleLockedFieldFocus}
                 className="h-12 w-full cursor-pointer rounded-xl border border-emerald-200 bg-zinc-50 px-4 text-sm text-zinc-500 outline-none transition hover:border-emerald-300 focus:border-emerald-400"
@@ -205,14 +210,14 @@ export default function Register() {
                 htmlFor="city"
                 className="mb-2 block text-sm font-medium text-zinc-700"
               >
-                Ciudad
+                {t.fields.city.label}
               </label>
 
               <input
                 id="city"
                 name="city"
                 type="text"
-                placeholder="Tu ciudad"
+                placeholder={t.fields.city.placeholder}
                 readOnly
                 onFocus={handleLockedFieldFocus}
                 className="h-12 w-full cursor-pointer rounded-xl border border-emerald-200 bg-zinc-50 px-4 text-sm text-zinc-500 outline-none transition hover:border-emerald-300 focus:border-emerald-400"
@@ -225,14 +230,14 @@ export default function Register() {
                 htmlFor="email"
                 className="mb-2 block text-sm font-medium text-zinc-700"
               >
-                Correo electrónico
+                {t.fields.email.label}
               </label>
 
               <input
                 id="email"
                 name="email"
                 type="email"
-                placeholder="correo@ejemplo.com"
+                placeholder={t.fields.email.placeholder}
                 className="h-12 w-full rounded-xl border border-emerald-300 bg-white px-4 text-sm text-zinc-800 outline-none transition placeholder:text-zinc-400 hover:border-emerald-400 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10"
               />
             </div>
@@ -243,7 +248,7 @@ export default function Register() {
                 htmlFor="password"
                 className="mb-2 block text-sm font-medium text-zinc-700"
               >
-                Contraseña
+                {t.fields.password.label}
               </label>
 
               <div className="relative">
@@ -251,7 +256,7 @@ export default function Register() {
                   id="password"
                   name="password"
                   type={showPassword ? "text" : "password"}
-                  placeholder="Creá una contraseña"
+                  placeholder={t.fields.password.placeholder}
                   className="h-12 w-full rounded-xl border border-emerald-300 bg-white px-4 pr-12 text-sm text-zinc-800 outline-none transition placeholder:text-zinc-400 hover:border-emerald-400 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10"
                 />
 
@@ -260,10 +265,14 @@ export default function Register() {
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-lg text-zinc-400 transition hover:bg-emerald-50 hover:text-emerald-600"
                   aria-label={
-                    showPassword ? "Ocultar contraseña" : "Mostrar contraseña"
+                    showPassword
+                      ? t.passwordToggle.hideLabel
+                      : t.passwordToggle.showLabel
                   }
                 >
-                  {showPassword ? "◉" : "○"}
+                  {showPassword
+                    ? t.passwordToggle.iconVisible
+                    : t.passwordToggle.iconHidden}
                 </button>
               </div>
             </div>
@@ -274,7 +283,7 @@ export default function Register() {
                 htmlFor="confirmPassword"
                 className="mb-2 block text-sm font-medium text-zinc-700"
               >
-                Repetir contraseña
+                {t.fields.confirmPassword.label}
               </label>
 
               <div className="relative">
@@ -282,7 +291,7 @@ export default function Register() {
                   id="confirmPassword"
                   name="confirmPassword"
                   type={showConfirmPassword ? "text" : "password"}
-                  placeholder="Repetí tu contraseña"
+                  placeholder={t.fields.confirmPassword.placeholder}
                   className="h-12 w-full rounded-xl border border-emerald-300 bg-white px-4 pr-12 text-sm text-zinc-800 outline-none transition placeholder:text-zinc-400 hover:border-emerald-400 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10"
                 />
 
@@ -292,11 +301,13 @@ export default function Register() {
                   className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-lg text-zinc-400 transition hover:bg-emerald-50 hover:text-emerald-600"
                   aria-label={
                     showConfirmPassword
-                      ? "Ocultar contraseña"
-                      : "Mostrar contraseña"
+                      ? t.passwordToggle.hideLabel
+                      : t.passwordToggle.showLabel
                   }
                 >
-                  {showConfirmPassword ? "◉" : "○"}
+                  {showConfirmPassword
+                    ? t.passwordToggle.iconVisible
+                    : t.passwordToggle.iconHidden}
                 </button>
               </div>
             </div>
@@ -308,9 +319,7 @@ export default function Register() {
                 className="mt-1 h-4 w-4 cursor-pointer accent-emerald-600"
               />
 
-              <span className="text-xs leading-5 text-zinc-500">
-                Acepto los términos y condiciones y la política de privacidad.
-              </span>
+              <span className="text-xs leading-5 text-zinc-500">{t.terms}</span>
             </label>
 
             {/* REGISTER */}
@@ -318,20 +327,20 @@ export default function Register() {
               type="submit"
               className="w-full cursor-pointer rounded-xl bg-emerald-600 px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-emerald-700"
             >
-              Crear cuenta
+              {t.submit}
             </button>
           </form>
 
           {/* LOGIN */}
           <div className="mt-6 text-center">
-            <span className="text-sm text-zinc-500">¿Ya tenés una cuenta?</span>
+            <span className="text-sm text-zinc-500">{t.haveAccount}</span>
 
             <button
               type="button"
               onClick={() => router.push("/login/")}
               className="ml-1 cursor-pointer text-sm font-semibold text-emerald-600 transition hover:text-emerald-700"
             >
-              Ingresar
+              {t.login}
             </button>
           </div>
 
@@ -341,14 +350,13 @@ export default function Register() {
             onClick={() => router.push("/")}
             className="mt-4 w-full cursor-pointer rounded-xl px-5 py-3 text-sm font-medium text-zinc-500 transition hover:bg-zinc-50 hover:text-zinc-700"
           >
-            ← Volver al inicio
+            {t.backHome}
           </button>
 
           {/* DEMO NOTICE */}
           <div className="mt-6 rounded-xl border border-emerald-100 bg-emerald-50 px-4 py-3">
             <p className="text-center text-xs leading-5 text-emerald-700">
-              Esta sección corresponde a una demostración. La creación de
-              cuentas todavía no está conectada.
+              {t.demoNotice}
             </p>
           </div>
         </section>

@@ -3,327 +3,338 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useNavigation } from "../context/NavigationContext";
+import categories from "../db/Categories.db.json";
+import products from "../db/Products.db.json";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const router = useRouter();
-  const { categories, pages } = useNavigation();
+  const { pages } = useNavigation();
+
+  const getCategorySlug = (name) => {
+    return name
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\s+/g, "-");
+  };
+
+  // 6 categorías con más productos, excluyendo Ofertas
+  const mainCategories = categories
+    .map((category) => ({
+      ...category,
+      productCount: products.filter(
+        (product) => product.categoryId === category.id,
+      ).length,
+    }))
+    .filter(
+      (category) =>
+        category.productCount > 0 && category.name.toLowerCase() !== "ofertas",
+    )
+    .sort((a, b) => b.productCount - a.productCount)
+    .slice(0, 6);
+
+  // Ofertas siempre va última
+  const offersCategory = categories.find(
+    (category) => category.name.toLowerCase() === "ofertas",
+  );
+
+  const visibleCategories = offersCategory
+    ? [...mainCategories, offersCategory]
+    : mainCategories;
 
   const navigate = (path) => {
     setIsOpen(false);
     router.push(path);
   };
 
+  const navigateCategory = (category) => {
+    const slug = getCategorySlug(category.name);
+
+    navigate(`/products?category=${slug}`);
+  };
+
   return (
-    <nav className="relative z-50 w-full bg-white">
-      {/* TOP BAR */}
-      <div className="bg-emerald-700">
-        <div className="mx-auto flex h-9 max-w-7xl items-center justify-between px-5 text-xs text-white sm:px-8 lg:px-10">
-          <p className="font-medium">Salud, cuidado y bienestar cerca tuyo.</p>
-
-          <div className="hidden items-center gap-6 md:flex">
+    <header className="relative z-10 w-full bg-white">
+      {/* Barra superior */}
+      <div className="bg-[#3F7D5A] text-white">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 text-xs sm:px-6 lg:px-8">
+          <div className="flex items-center gap-4">
             <button
               type="button"
-              onClick={() => navigate("/services/")}
+              onClick={() => navigate("/shipping/")}
               className="cursor-pointer transition hover:text-emerald-100"
             >
-              Envíos
-            </button>
-
-            <button
-              type="button"
-              onClick={() => navigate("/services/")}
-              className="cursor-pointer transition hover:text-emerald-100"
-            >
-              Retiro en tienda
-            </button>
-
-            <button
-              type="button"
-              onClick={() => navigate("/contact/")}
-              className="cursor-pointer transition hover:text-emerald-100"
-            >
-              Atención al cliente
+              Envío
             </button>
           </div>
+          <button
+            type="button"
+            onClick={() => navigate("/contact/")}
+            className="hidden sm:block cursor-pointer transition hover:text-emerald-100"
+          >
+            <span>Atención al cliente</span>
+          </button>
         </div>
       </div>
 
-      {/* MAIN NAVBAR */}
-      <div className="border-b border-emerald-100 bg-white">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-          <div className="flex min-h-[78px] items-center gap-5">
-            {/* LOGO */}
+      {/* Header principal */}
+      <div className="border-b border-[#D7E8DC] bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-4">
+            {/* Logo */}
             <button
               type="button"
               onClick={() => navigate("/")}
-              className="flex shrink-0 cursor-pointer items-center gap-3 text-left"
+              className="flex shrink-0 cursor-pointer items-center gap-2"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-600 text-2xl font-bold text-white shadow-sm">
-                +
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#3F7D5A] text-lg text-white">
+                ✚
               </span>
 
-              <span className="leading-none">
-                <span className="block text-sm font-bold tracking-tight text-zinc-900 sm:text-base">
-                  FARMACIA
-                </span>
-
-                <span className="block text-sm font-bold tracking-tight text-emerald-600 sm:text-base">
-                  SALUD
-                </span>
+              <span className="hidden text-lg font-bold text-zinc-900 sm:block">
+                FARMACIA <span className="text-[#3F7D5A]">SALUD</span>
               </span>
             </button>
 
-            {/* SEARCH DESKTOP */}
-            <div className="mx-auto hidden min-w-0 max-w-2xl flex-1 md:block">
-              <div className="relative">
-                <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-emerald-600">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    className="h-5 w-5"
-                  >
-                    <circle cx="11" cy="11" r="7" />
-                    <path d="m20 20-4-4" />
-                  </svg>
-                </span>
+            {/* Buscador desktop */}
+            <div className="hidden flex-1 md:block">
+              <div className="mx-auto max-w-2xl">
+                <div className="relative">
+                  <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#3F7D5A]">
+                    🔎
+                  </span>
 
-                <input
-                  type="text"
-                  placeholder="¿Qué estás buscando?"
-                  className="h-11 w-full rounded-xl border border-emerald-300 bg-white pl-11 pr-4 text-sm text-zinc-800 outline-none transition placeholder:text-zinc-400 hover:border-emerald-400 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10"
-                />
+                  <input
+                    type="text"
+                    placeholder="¿Qué estás buscando?"
+                    className="h-11 w-full rounded-xl border border-[#D7E8DC] bg-[#F1F7F3] pl-11 pr-4 text-sm text-zinc-800 outline-none transition placeholder:text-zinc-400 focus:border-[#3F7D5A] focus:ring-4 focus:ring-[#3F7D5A]/10"
+                  />
+                </div>
               </div>
             </div>
 
-            {/* ACTIONS */}
-            <div className="ml-auto hidden items-center gap-1 md:flex">
-              {/* DELIVERY */}
+            {/* Acciones */}
+            <div className="ml-auto flex items-center gap-2">
               <button
                 type="button"
-                onClick={() => navigate("/services/")}
-                className="flex cursor-pointer items-center gap-2 rounded-xl px-3 py-2 transition hover:bg-emerald-50"
+                onClick={() => navigate("/shipping/")}
+                className="hidden cursor-pointer items-center gap-2 rounded-xl px-3 py-2 text-sm text-zinc-600 transition hover:bg-[#F1F7F3] hover:text-[#3F7D5A] lg:flex"
               >
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    className="h-4 w-4"
-                  >
-                    <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
-                    <circle cx="12" cy="10" r="2.5" />
-                  </svg>
-                </span>
-
-                <span className="hidden text-left xl:block">
-                  <span className="block text-[10px] text-zinc-400">
-                    Entrega
-                  </span>
-
-                  <span className="block text-xs font-semibold text-zinc-700">
-                    Elegir método
-                  </span>
-                </span>
+                <span>🚚</span>
+                <span>Envío</span>
               </button>
 
-              {/* ACCOUNT */}
               <button
                 type="button"
                 onClick={() => navigate("/login/")}
-                className="flex cursor-pointer items-center gap-2 rounded-xl px-3 py-2 transition hover:bg-emerald-50"
+                className="hidden cursor-pointer items-center gap-2 rounded-xl px-3 py-2 text-sm text-zinc-600 transition hover:bg-[#F1F7F3] hover:text-[#3F7D5A] sm:flex"
               >
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    className="h-5 w-5"
-                  >
-                    <circle cx="12" cy="8" r="3.2" />
-                    <path d="M5 20c.8-3.4 3.1-5.4 7-5.4s6.2 2 7 5.4" />
-                  </svg>
-                </span>
+                <span>👤</span>
+                <span>Ingresar</span>
+              </button>
 
-                <span className="hidden text-left xl:block">
-                  <span className="block text-[10px] text-zinc-400">
-                    Mi espacio
-                  </span>
-
-                  <span className="block text-xs font-semibold text-zinc-700">
-                    Ingresar
-                  </span>
-                </span>
+              {/* Menú mobile */}
+              <button
+                type="button"
+                onClick={() => setIsOpen(!isOpen)}
+                className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border border-[#D7E8DC] bg-[#F1F7F3] text-zinc-700 transition hover:border-[#BFD8C7] hover:bg-[#E8F2EB] md:hidden"
+              >
+                {isOpen ? "✕" : "☰"}
               </button>
             </div>
+          </div>
 
-            {/* MOBILE BUTTON */}
-            <button
-              type="button"
-              onClick={() => setIsOpen(!isOpen)}
-              className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-xl border border-emerald-200 bg-white text-zinc-700 transition hover:border-emerald-400 hover:text-emerald-600 md:hidden"
-              aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
-              aria-expanded={isOpen}
-            >
-              <span className="text-2xl leading-none">
-                {isOpen ? "×" : "☰"}
+          {/* Buscador mobile */}
+          <div className="mt-4 md:hidden">
+            <div className="relative">
+              <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#3F7D5A]">
+                🔎
               </span>
-            </button>
+
+              <input
+                type="text"
+                placeholder="¿Qué estás buscando?"
+                className="h-11 w-full rounded-xl border border-[#D7E8DC] bg-[#F1F7F3] pl-11 pr-4 text-sm text-zinc-800 outline-none transition placeholder:text-zinc-400 focus:border-[#3F7D5A] focus:ring-4 focus:ring-[#3F7D5A]/10"
+              />
+            </div>
           </div>
         </div>
       </div>
 
-      {/* SEARCH MOBILE */}
-      <div className="border-b border-emerald-100 bg-emerald-50/40 px-5 py-3 md:hidden">
-        <div className="relative">
-          <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-emerald-600">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              className="h-5 w-5"
-            >
-              <circle cx="11" cy="11" r="7" />
-              <path d="m20 20-4-4" />
-            </svg>
-          </span>
-
-          <input
-            type="text"
-            placeholder="¿Qué estás buscando?"
-            className="h-11 w-full rounded-xl border border-emerald-300 bg-white pl-11 pr-4 text-sm text-zinc-800 outline-none transition placeholder:text-zinc-400 hover:border-emerald-400 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10"
-          />
-        </div>
-      </div>
-
-      {/* CATEGORIES */}
-      <div className="hidden border-b border-emerald-100 bg-white md:block">
-        <div className="mx-auto flex min-h-12 max-w-7xl items-center justify-between gap-5 px-5 sm:px-8 lg:px-10">
-          <div className="flex min-w-0 items-center gap-7">
-            {categories.map((category, index) => (
-              <button
-                key={category.path}
-                type="button"
-                onClick={() => navigate(category.path)}
-                className={`cursor-pointer whitespace-nowrap text-sm transition ${
-                  index === 0
-                    ? "font-semibold text-emerald-700 hover:text-emerald-800"
-                    : category.name === "Ofertas"
-                      ? "font-semibold text-emerald-600 hover:text-emerald-700"
-                      : "font-medium text-zinc-600 hover:text-emerald-700"
-                }`}
-              >
-                {category.name}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* SECONDARY NAV */}
-      <div className="hidden border-b border-zinc-100 bg-emerald-50/40 md:block">
-        <div className="mx-auto flex h-10 max-w-7xl items-center px-5 sm:px-8 lg:px-10">
-          <div className="flex items-center gap-6">
-            {pages.map((page) => (
-              <button
-                key={page.path}
-                type="button"
-                onClick={() => navigate(page.path)}
-                className={`cursor-pointer text-xs transition ${
-                  page.name === "Inicio"
-                    ? "font-semibold text-emerald-700 hover:text-emerald-800"
-                    : "font-medium text-zinc-500 hover:text-emerald-700"
-                }`}
-              >
-                {page.name}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* MOBILE MENU */}
-      <div
-        className={`overflow-hidden border-b border-emerald-100 bg-white shadow-lg transition-all duration-300 md:hidden ${
-          isOpen ? "max-h-[720px] opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="flex flex-col px-5 py-4">
-          {/* CATEGORIES */}
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-400">
-            Categorías
-          </p>
-
-          {categories.map((category, index) => (
+      {/* Categorías */}
+      <div className="hidden border-b border-[#D7E8DC] bg-white md:block">
+        <div className="mx-auto flex max-w-7xl items-center gap-1 overflow-x-auto px-4 sm:px-6 lg:px-8">
+          {visibleCategories.map((category) => (
             <button
-              key={category.path}
+              key={category.id}
               type="button"
-              onClick={() => navigate(category.path)}
-              className={`cursor-pointer border-b border-emerald-50 py-4 text-left text-sm transition ${
-                index === 0
-                  ? "font-semibold text-emerald-700"
-                  : category.name === "Ofertas"
-                    ? "font-semibold text-emerald-600"
-                    : "font-medium text-zinc-700"
+              onClick={() => navigateCategory(category)}
+              className={`shrink-0 cursor-pointer px-4 py-3 text-sm font-medium transition ${
+                category.name.toLowerCase() === "ofertas"
+                  ? "text-red-500 hover:bg-red-50 hover:text-red-600"
+                  : "text-zinc-600 hover:bg-[#F1F7F3] hover:text-[#3F7D5A]"
               }`}
             >
               {category.name}
             </button>
           ))}
+        </div>
+      </div>
 
-          {/* INFORMATION */}
-          <div className="mt-5 border-t border-emerald-50 pt-4">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-400">
-              Información
-            </p>
+      {/* Menú mobile */}
+      {isOpen && (
+        <div className="border-b border-[#D7E8DC] bg-white md:hidden">
+          <div className="mx-auto max-w-7xl px-4 py-4">
+            {/* Categorías */}
+            <div>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-[#3F7D5A]">
+                Categorías
+              </p>
 
-            {pages.map((page) => (
+              <div className="grid grid-cols-2 gap-2">
+                {visibleCategories.map((category) => (
+                  <button
+                    key={category.id}
+                    type="button"
+                    onClick={() => navigateCategory(category)}
+                    className={`cursor-pointer rounded-xl border px-3 py-3 text-left text-sm font-medium transition ${
+                      category.name.toLowerCase() === "ofertas"
+                        ? "border-red-200 bg-red-50 text-red-500 hover:border-red-300 hover:bg-red-100"
+                        : "border-[#D7E8DC] bg-[#F1F7F3] text-zinc-700 hover:border-[#BFD8C7] hover:text-[#3F7D5A]"
+                    }`}
+                  >
+                    {category.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Navegación */}
+            <div className="mt-5 border-t border-[#D7E8DC] pt-4">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-[#3F7D5A]">
+                Navegación
+              </p>
+
+              <div className="flex flex-col gap-1">
+                <button
+                  type="button"
+                  onClick={() => navigate("/")}
+                  className="cursor-pointer rounded-xl px-3 py-3 text-left text-sm text-zinc-700 transition hover:bg-[#F1F7F3] hover:text-[#3F7D5A]"
+                >
+                  Inicio
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => navigate("/products/")}
+                  className="cursor-pointer rounded-xl px-3 py-3 text-left text-sm text-zinc-700 transition hover:bg-[#F1F7F3] hover:text-[#3F7D5A]"
+                >
+                  Productos
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => navigate("/services/")}
+                  className="cursor-pointer rounded-xl px-3 py-3 text-left text-sm text-zinc-700 transition hover:bg-[#F1F7F3] hover:text-[#3F7D5A]"
+                >
+                  Servicios
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => navigate("/about/")}
+                  className="cursor-pointer rounded-xl px-3 py-3 text-left text-sm text-zinc-700 transition hover:bg-[#F1F7F3] hover:text-[#3F7D5A]"
+                >
+                  Nosotros
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => navigate("/contact/")}
+                  className="cursor-pointer rounded-xl px-3 py-3 text-left text-sm text-zinc-700 transition hover:bg-[#F1F7F3] hover:text-[#3F7D5A]"
+                >
+                  Contacto
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => navigate("/shipping/")}
+                  className="cursor-pointer rounded-xl px-3 py-3 text-left text-sm text-zinc-700 transition hover:bg-[#F1F7F3] hover:text-[#3F7D5A]"
+                >
+                  🚚  
+                </button>
+              </div>
+            </div>
+
+            {/* Ingresar mobile */}
+            <div className="mt-4 border-t border-[#D7E8DC] pt-4">
               <button
-                key={page.path}
                 type="button"
-                onClick={() => navigate(page.path)}
-                className="block cursor-pointer py-3 text-left text-sm font-medium text-zinc-600 transition hover:text-emerald-700"
+                onClick={() => navigate("/login/")}
+                className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#3F7D5A] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#356B4C]"
               >
-                {page.name}
+                <span>👤</span>
+                <span>Ingresar</span>
               </button>
-            ))}
+            </div>
           </div>
+        </div>
+      )}
 
-          {/* ACCOUNT */}
+      {/* Navegación inferior desktop */}
+      <div className="border-b border-[#D7E8DC] bg-[#F1F7F3]">
+        <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 sm:px-6 lg:px-8">
           <button
             type="button"
-            onClick={() => navigate("/login/")}
-            className="mt-4 flex w-full cursor-pointer items-center gap-3 rounded-xl border border-emerald-100 p-4 text-left transition hover:border-emerald-300 hover:bg-emerald-50"
+            onClick={() => navigate("/")}
+            className="cursor-pointer px-4 py-3 text-sm font-medium text-zinc-600 transition hover:text-[#3F7D5A]"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-                className="h-5 w-5"
-              >
-                <circle cx="12" cy="8" r="3.2" />
-                <path d="M5 20c.8-3.4 3.1-5.4 7-5.4s6.2 2 7 5.4" />
-              </svg>
-            </span>
+            Inicio
+          </button>
 
-            <span>
-              <span className="block text-xs text-zinc-400">Mi espacio</span>
+          <button
+            type="button"
+            onClick={() => navigate("/products/")}
+            className="cursor-pointer px-4 py-3 text-sm font-medium text-zinc-600 transition hover:text-[#3F7D5A]"
+          >
+            Productos
+          </button>
 
-              <span className="mt-0.5 block text-sm font-semibold text-zinc-800">
-                Ingresar
-              </span>
-            </span>
+          <button
+            type="button"
+            onClick={() => navigate("/services/")}
+            className="cursor-pointer px-4 py-3 text-sm font-medium text-zinc-600 transition hover:text-[#3F7D5A]"
+          >
+            Servicios
+          </button>
+
+          <button
+            type="button"
+            onClick={() => navigate("/about/")}
+            className="cursor-pointer px-4 py-3 text-sm font-medium text-zinc-600 transition hover:text-[#3F7D5A]"
+          >
+            Nosotros
+          </button>
+
+          <button
+            type="button"
+            onClick={() => navigate("/contact/")}
+            className="cursor-pointer px-4 py-3 text-sm font-medium text-zinc-600 transition hover:text-[#3F7D5A]"
+          >
+            Contacto
+          </button>
+
+          <button
+            type="button"
+            onClick={() => navigate("/shipping/")}
+            className="cursor-pointer px-4 py-3 text-sm font-medium text-zinc-600 transition hover:text-[#3F7D5A]"
+          >
+            Envío
           </button>
         </div>
       </div>
-    </nav>
+    </header>
   );
 }

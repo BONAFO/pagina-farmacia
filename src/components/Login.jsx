@@ -1,11 +1,21 @@
+// src/components/Login.jsx
 "use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import DemoModal from "../layouts/DemoModal";
+import t from "@/src/translations/Login";
 
-
-
+/**
+ * Login
+ *
+ * Los textos e íconos viven en src/translations/Login.js. Acá quedan las
+ * clases, las rutas y la lógica.
+ *
+ * Demo: no hay inicio de sesión real. Enviar el formulario o tocar
+ * "¿Olvidaste tu contraseña?" abre DemoModal con el texto
+ * correspondiente (t.modal.login / t.modal.forgotPassword).
+ */
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -29,17 +39,11 @@ export default function Login() {
   const handleLogin = (event) => {
     event.preventDefault();
 
-    openModal(
-      "Inicio de sesión",
-      "El inicio de sesión no está disponible en esta demostración."
-    );
+    openModal(t.modal.login.title, t.modal.login.message);
   };
 
   const handleForgotPassword = () => {
-    openModal(
-      "Recuperar contraseña",
-      "La recuperación de contraseña no está disponible en esta demostración."
-    );
+    openModal(t.modal.forgotPassword.title, t.modal.forgotPassword.message);
   };
 
   return (
@@ -50,16 +54,16 @@ export default function Login() {
           <div className="flex justify-center">
             <div className="flex items-center gap-3">
               <span className="flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-600 text-3xl font-bold text-white shadow-sm">
-                +
+                {t.brand.logo}
               </span>
 
               <div className="leading-none">
                 <span className="block text-lg font-bold tracking-tight text-zinc-900">
-                  FARMACIA
+                  {t.brand.first}
                 </span>
 
                 <span className="block text-lg font-bold tracking-tight text-emerald-600">
-                  SALUD
+                  {t.brand.second}
                 </span>
               </div>
             </div>
@@ -67,13 +71,9 @@ export default function Login() {
 
           {/* TITLE */}
           <div className="mt-8 text-center">
-            <h1 className="text-2xl font-bold text-zinc-900">
-              Ingresar
-            </h1>
+            <h1 className="text-2xl font-bold text-zinc-900">{t.title}</h1>
 
-            <p className="mt-2 text-sm text-zinc-500">
-              Accedé a tu espacio en Farmacia Salud.
-            </p>
+            <p className="mt-2 text-sm text-zinc-500">{t.subtitle}</p>
           </div>
 
           {/* FORM */}
@@ -84,14 +84,14 @@ export default function Login() {
                 htmlFor="email"
                 className="mb-2 block text-sm font-medium text-zinc-700"
               >
-                Correo electrónico
+                {t.email.label}
               </label>
 
               <input
                 id="email"
                 name="email"
                 type="email"
-                placeholder="correo@ejemplo.com"
+                placeholder={t.email.placeholder}
                 className="h-12 w-full rounded-xl border border-emerald-200 bg-white px-4 text-sm text-zinc-800 outline-none transition placeholder:text-zinc-400 hover:border-emerald-300 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10"
               />
             </div>
@@ -102,7 +102,7 @@ export default function Login() {
                 htmlFor="password"
                 className="mb-2 block text-sm font-medium text-zinc-700"
               >
-                Contraseña
+                {t.password.label}
               </label>
 
               <div className="relative">
@@ -110,7 +110,7 @@ export default function Login() {
                   id="password"
                   name="password"
                   type={showPassword ? "text" : "password"}
-                  placeholder="Ingresá tu contraseña"
+                  placeholder={t.password.placeholder}
                   className="h-12 w-full rounded-xl border border-emerald-200 bg-white px-4 pr-12 text-sm text-zinc-800 outline-none transition placeholder:text-zinc-400 hover:border-emerald-300 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10"
                 />
 
@@ -119,12 +119,10 @@ export default function Login() {
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-lg text-zinc-400 transition hover:bg-emerald-50 hover:text-emerald-600"
                   aria-label={
-                    showPassword
-                      ? "Ocultar contraseña"
-                      : "Mostrar contraseña"
+                    showPassword ? t.password.hideLabel : t.password.showLabel
                   }
                 >
-                  {showPassword ? "◉" : "○"}
+                  {showPassword ? t.password.iconVisible : t.password.iconHidden}
                 </button>
               </div>
             </div>
@@ -136,7 +134,7 @@ export default function Login() {
                   type="checkbox"
                   className="h-4 w-4 cursor-pointer accent-emerald-600"
                 />
-                Recordarme
+                {t.remember}
               </label>
 
               <button
@@ -144,7 +142,7 @@ export default function Login() {
                 onClick={handleForgotPassword}
                 className="cursor-pointer text-sm font-medium text-emerald-600 transition hover:text-emerald-700"
               >
-                ¿Olvidaste tu contraseña?
+                {t.forgotPassword}
               </button>
             </div>
 
@@ -153,7 +151,7 @@ export default function Login() {
               type="submit"
               className="w-full cursor-pointer rounded-xl bg-emerald-600 px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-emerald-700"
             >
-              Ingresar
+              {t.submit}
             </button>
           </form>
 
@@ -163,7 +161,7 @@ export default function Login() {
             onClick={() => router.push("/register/")}
             className="mt-4 w-full cursor-pointer rounded-xl border border-emerald-200 px-5 py-3.5 text-sm font-semibold text-emerald-700 transition hover:border-emerald-300 hover:bg-emerald-50"
           >
-            Crear cuenta
+            {t.createAccount}
           </button>
 
           {/* HOME */}
@@ -172,14 +170,13 @@ export default function Login() {
             onClick={() => router.push("/")}
             className="mt-3 w-full cursor-pointer rounded-xl px-5 py-3 text-sm font-medium text-zinc-500 transition hover:bg-zinc-50 hover:text-zinc-700"
           >
-            ← Volver al inicio
+            {t.backHome}
           </button>
 
           {/* DEMO NOTICE */}
           <div className="mt-6 rounded-xl border border-emerald-100 bg-emerald-50 px-4 py-3">
             <p className="text-center text-xs leading-5 text-emerald-700">
-              Esta sección corresponde a una demostración. El inicio de
-              sesión todavía no está conectado.
+              {t.demoNotice}
             </p>
           </div>
         </section>
@@ -195,4 +192,3 @@ export default function Login() {
     </main>
   );
 }
-
