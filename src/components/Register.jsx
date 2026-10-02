@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import DemoModal from "../layouts/DemoModal";
 import t from "@/src/translations/Register";
+import { useNavigationHook } from "../hooks/Navigation";
 
 /**
  * Register
@@ -29,6 +30,9 @@ export default function Register() {
 
   const router = useRouter();
 
+  const homePath = useNavigationHook("home");
+  const loginPath = useNavigationHook("login");
+  
   const openModal = (title, message) => {
     setDemoContent({
       title,
@@ -337,7 +341,7 @@ export default function Register() {
 
             <button
               type="button"
-              onClick={() => router.push("/login/")}
+              onClick={() => router.push(loginPath)}
               className="ml-1 cursor-pointer text-sm font-semibold text-emerald-600 transition hover:text-emerald-700"
             >
               {t.login}
@@ -347,7 +351,7 @@ export default function Register() {
           {/* HOME */}
           <button
             type="button"
-            onClick={() => router.push("/")}
+            onClick={() => router.push(homePath)}
             className="mt-4 w-full cursor-pointer rounded-xl px-5 py-3 text-sm font-medium text-zinc-500 transition hover:bg-zinc-50 hover:text-zinc-700"
           >
             {t.backHome}

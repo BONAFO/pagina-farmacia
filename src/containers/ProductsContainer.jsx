@@ -19,8 +19,8 @@ export default function ProductsContainer() {
             </div>
           </section>
         </main>
+        {modalVisible}
       </MainLayout>
-      {modalVisible}
     </>
   );
 }

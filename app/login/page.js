@@ -1,8 +1,8 @@
-import Login from "@/src/components/Login";
+import LoginContainer from "@/src/containers/LoginContainer";
 
 
 export default function LoginPage() {
   return (
-      <Login />
+      <LoginContainer />
   );
 }

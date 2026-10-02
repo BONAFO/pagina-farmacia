@@ -2,23 +2,33 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useNavigation } from "../context/NavigationContext";
 import categories from "../db/Categories.db.json";
 import products from "../db/Products.db.json";
+import {
+  useCategoryNavigationHook,
+  useNavigationHook,
+} from "../hooks/Navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const router = useRouter();
-  const { pages } = useNavigation();
 
-  const getCategorySlug = (name) => {
-    return name
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/\s+/g, "-");
-  };
+  const shippingPath = useNavigationHook("shipping");
+  const contactPath = useNavigationHook("contact");
+  const homePath = useNavigationHook("home");
+  const loginPath = useNavigationHook("login");
+  const servicesPath = useNavigationHook("services");
+  const productsPath = useNavigationHook("products");
+  const aboutPath = useNavigationHook("about");
+
+  // const getCategorySlug = (name) => {
+  //   return name
+  //     .toLowerCase()
+  //     .normalize("NFD")
+  //     .replace(/[\u0300-\u036f]/g, "")
+  //     .replace(/\s+/g, "-");
+  // };
 
   // 6 categorías con más productos, excluyendo Ofertas
   const mainCategories = categories
@@ -49,11 +59,13 @@ export default function Navbar() {
     router.push(path);
   };
 
-  const navigateCategory = (category) => {
-    const slug = getCategorySlug(category.name);
+  // const navigateCategory = (category) => {
+  //   const slug = getCategorySlug(category.name);
 
-    navigate(`/products?category=${slug}`);
-  };
+  //   navigate(`${productsPath}?category=${slug}`);
+  // };
+
+  const categoryNavigation = useCategoryNavigationHook();
 
   return (
     <header className="relative z-10 w-full bg-white">
@@ -63,7 +75,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <button
               type="button"
-              onClick={() => navigate("/shipping/")}
+              onClick={() => navigate(shippingPath)}
               className="cursor-pointer transition hover:text-emerald-100"
             >
               Envío
@@ -71,7 +83,7 @@ export default function Navbar() {
           </div>
           <button
             type="button"
-            onClick={() => navigate("/contact/")}
+            onClick={() => navigate(contactPath)}
             className="hidden sm:block cursor-pointer transition hover:text-emerald-100"
           >
             <span>Atención al cliente</span>
@@ -86,7 +98,7 @@ export default function Navbar() {
             {/* Logo */}
             <button
               type="button"
-              onClick={() => navigate("/")}
+              onClick={() => navigate(homePath)}
               className="flex shrink-0 cursor-pointer items-center gap-2"
             >
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#3F7D5A] text-lg text-white">
@@ -119,7 +131,7 @@ export default function Navbar() {
             <div className="ml-auto flex items-center gap-2">
               <button
                 type="button"
-                onClick={() => navigate("/shipping/")}
+                onClick={() => navigate(shippingPath)}
                 className="hidden cursor-pointer items-center gap-2 rounded-xl px-3 py-2 text-sm text-zinc-600 transition hover:bg-[#F1F7F3] hover:text-[#3F7D5A] lg:flex"
               >
                 <span>🚚</span>
@@ -128,7 +140,7 @@ export default function Navbar() {
 
               <button
                 type="button"
-                onClick={() => navigate("/login/")}
+                onClick={() => navigate(loginPath)}
                 className="hidden cursor-pointer items-center gap-2 rounded-xl px-3 py-2 text-sm text-zinc-600 transition hover:bg-[#F1F7F3] hover:text-[#3F7D5A] sm:flex"
               >
                 <span>👤</span>
@@ -170,7 +182,7 @@ export default function Navbar() {
             <button
               key={category.id}
               type="button"
-              onClick={() => navigateCategory(category)}
+              onClick={() => navigate(categoryNavigation(category))}
               className={`shrink-0 cursor-pointer px-4 py-3 text-sm font-medium transition ${
                 category.name.toLowerCase() === "ofertas"
                   ? "text-red-500 hover:bg-red-50 hover:text-red-600"
@@ -220,7 +232,7 @@ export default function Navbar() {
               <div className="flex flex-col gap-1">
                 <button
                   type="button"
-                  onClick={() => navigate("/")}
+                  onClick={() => navigate(homePath)}
                   className="cursor-pointer rounded-xl px-3 py-3 text-left text-sm text-zinc-700 transition hover:bg-[#F1F7F3] hover:text-[#3F7D5A]"
                 >
                   Inicio
@@ -228,7 +240,7 @@ export default function Navbar() {
 
                 <button
                   type="button"
-                  onClick={() => navigate("/products/")}
+                  onClick={() => navigate(productsPath)}
                   className="cursor-pointer rounded-xl px-3 py-3 text-left text-sm text-zinc-700 transition hover:bg-[#F1F7F3] hover:text-[#3F7D5A]"
                 >
                   Productos
@@ -236,7 +248,7 @@ export default function Navbar() {
 
                 <button
                   type="button"
-                  onClick={() => navigate("/services/")}
+                  onClick={() => navigate(servicesPath)}
                   className="cursor-pointer rounded-xl px-3 py-3 text-left text-sm text-zinc-700 transition hover:bg-[#F1F7F3] hover:text-[#3F7D5A]"
                 >
                   Servicios
@@ -244,7 +256,7 @@ export default function Navbar() {
 
                 <button
                   type="button"
-                  onClick={() => navigate("/about/")}
+                  onClick={() => navigate(aboutPath)}
                   className="cursor-pointer rounded-xl px-3 py-3 text-left text-sm text-zinc-700 transition hover:bg-[#F1F7F3] hover:text-[#3F7D5A]"
                 >
                   Nosotros
@@ -252,7 +264,7 @@ export default function Navbar() {
 
                 <button
                   type="button"
-                  onClick={() => navigate("/contact/")}
+                  onClick={() => navigate(contactPath)}
                   className="cursor-pointer rounded-xl px-3 py-3 text-left text-sm text-zinc-700 transition hover:bg-[#F1F7F3] hover:text-[#3F7D5A]"
                 >
                   Contacto
@@ -260,10 +272,10 @@ export default function Navbar() {
 
                 <button
                   type="button"
-                  onClick={() => navigate("/shipping/")}
+                  onClick={() => navigate(shippingPath)}
                   className="cursor-pointer rounded-xl px-3 py-3 text-left text-sm text-zinc-700 transition hover:bg-[#F1F7F3] hover:text-[#3F7D5A]"
                 >
-                  🚚  
+                  🚚
                 </button>
               </div>
             </div>
@@ -272,7 +284,7 @@ export default function Navbar() {
             <div className="mt-4 border-t border-[#D7E8DC] pt-4">
               <button
                 type="button"
-                onClick={() => navigate("/login/")}
+                onClick={() => navigate(loginPath)}
                 className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#3F7D5A] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#356B4C]"
               >
                 <span>👤</span>
@@ -288,7 +300,7 @@ export default function Navbar() {
         <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 sm:px-6 lg:px-8">
           <button
             type="button"
-            onClick={() => navigate("/")}
+            onClick={() => navigate(homePath)}
             className="cursor-pointer px-4 py-3 text-sm font-medium text-zinc-600 transition hover:text-[#3F7D5A]"
           >
             Inicio
@@ -296,7 +308,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            onClick={() => navigate("/products/")}
+            onClick={() => navigate(productsPath)}
             className="cursor-pointer px-4 py-3 text-sm font-medium text-zinc-600 transition hover:text-[#3F7D5A]"
           >
             Productos
@@ -304,7 +316,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            onClick={() => navigate("/services/")}
+            onClick={() => navigate(servicesPath)}
             className="cursor-pointer px-4 py-3 text-sm font-medium text-zinc-600 transition hover:text-[#3F7D5A]"
           >
             Servicios
@@ -312,7 +324,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            onClick={() => navigate("/about/")}
+            onClick={() => navigate(aboutPath)}
             className="cursor-pointer px-4 py-3 text-sm font-medium text-zinc-600 transition hover:text-[#3F7D5A]"
           >
             Nosotros
@@ -320,7 +332,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            onClick={() => navigate("/contact/")}
+            onClick={() => navigate(contactPath)}
             className="cursor-pointer px-4 py-3 text-sm font-medium text-zinc-600 transition hover:text-[#3F7D5A]"
           >
             Contacto
@@ -328,7 +340,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            onClick={() => navigate("/shipping/")}
+            onClick={() => navigate(shippingPath)}
             className="cursor-pointer px-4 py-3 text-sm font-medium text-zinc-600 transition hover:text-[#3F7D5A]"
           >
             Envío

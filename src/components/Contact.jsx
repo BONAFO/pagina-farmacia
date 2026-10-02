@@ -2,8 +2,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useNavigation } from "../context/NavigationContext";
 import t from "@/src/translations/Contact";
+import { useNavigationHook } from "../hooks/Navigation";
 
 /**
  * Contact (página "Contacto")
@@ -20,6 +20,9 @@ import t from "@/src/translations/Contact";
  * NavigationContext, por eso se quedan acá.
  */
 
+
+
+
 const INFO_STYLES = [
   "bg-emerald-50/50",
   "bg-white shadow-sm",
@@ -29,12 +32,11 @@ const INFO_STYLES = [
 
 export default function Contact() {
   const router = useRouter();
-  const { pages } = useNavigation();
 
-  const homePath = pages.find((page) => page.name === "home")?.path || "/";
+  const homePath = useNavigationHook("home");
 
-  const servicesPath =
-    pages.find((page) => page.name === "services")?.path || "/services/";
+  const servicesPath = useNavigationHook("services");
+
 
   return (
     <section className="w-full bg-white">

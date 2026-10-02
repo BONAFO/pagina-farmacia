@@ -2,22 +2,20 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useNavigation } from "../context/NavigationContext";
 import t from "@/src/translations/About";
-
-const CARD_STYLES = [
-  "bg-emerald-50",
-  "bg-white shadow-sm",
-  "bg-white shadow-sm",
-  "bg-emerald-50",
-];
+import { useNavigationHook } from "../hooks/Navigation";
 
 export default function About() {
+  const CARD_STYLES = [
+    "bg-emerald-50",
+    "bg-white shadow-sm",
+    "bg-white shadow-sm",
+    "bg-emerald-50",
+  ];
   const router = useRouter();
-  const { pages } = useNavigation();
 
-  const contactPath = pages.find((page) => page.name === "contact")?.path;
-  const servicesPath = pages.find((page) => page.name === "services")?.path;
+  const contactPath = useNavigationHook("contact");
+  const servicesPath = useNavigationHook("services");
 
   return (
     <section className="w-full bg-white">
@@ -82,8 +80,12 @@ export default function About() {
                 className={`rounded-2xl border border-emerald-100 p-6 ${CARD_STYLES[index]}`}
               >
                 <span className="text-3xl">{card.icon}</span>
-                <h3 className="mt-4 font-semibold text-zinc-900">{card.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-zinc-600">{card.description}</p>
+                <h3 className="mt-4 font-semibold text-zinc-900">
+                  {card.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-zinc-600">
+                  {card.description}
+                </p>
               </div>
             ))}
           </div>
@@ -93,7 +95,9 @@ export default function About() {
       {/* CTA */}
       <div className="border-t border-emerald-100 bg-emerald-600">
         <div className="mx-auto max-w-7xl px-5 py-14 text-center sm:px-8 sm:py-16 lg:px-10">
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">{t.cta.title}</h2>
+          <h2 className="text-3xl font-bold text-white sm:text-4xl">
+            {t.cta.title}
+          </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-emerald-50 sm:text-base">
             {t.cta.description}
           </p>
@@ -108,4 +112,4 @@ export default function About() {
       </div>
     </section>
   );
-}   
+}

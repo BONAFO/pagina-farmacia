@@ -3,11 +3,14 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { useProductsModal } from "../context/ProductsModalContext";
 import categories from "../db/Categories.db.json";
+import { useNavigationHook } from "../hooks/Navigation";
 
 export default function FiltersModal() {
   const { setModalVisible } = useProductsModal();
   const router = useRouter();
   const searchParams = useSearchParams();
+
+  const productsPath = useNavigationHook("products");
 
   const currentCategory = searchParams.get("category");
 
@@ -25,7 +28,7 @@ export default function FiltersModal() {
     const params = new URLSearchParams(searchParams.toString());
     params.set("category", slug);
 
-    router.push(`/products?${params.toString()}`);
+    router.push(`${productsPath}?${params.toString()}`);
     setModalVisible("");
   };
 
@@ -35,7 +38,7 @@ export default function FiltersModal() {
 
     const query = params.toString();
 
-    router.push(query ? `/products?${query}` : "/products");
+    router.push(query ? `${productsPath}}?${query}` : "/products");
     setModalVisible("");
   };
 

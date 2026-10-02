@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import DemoModal from "../layouts/DemoModal";
 import t from "@/src/translations/Login";
+import { useNavigationHook } from "../hooks/Navigation";
 
 /**
  * Login
@@ -26,6 +27,9 @@ export default function Login() {
   });
 
   const router = useRouter();
+
+  const homePath = useNavigationHook("home");
+  const registerPath = useNavigationHook("register");
 
   const openModal = (title, message) => {
     setDemoContent({
@@ -122,7 +126,9 @@ export default function Login() {
                     showPassword ? t.password.hideLabel : t.password.showLabel
                   }
                 >
-                  {showPassword ? t.password.iconVisible : t.password.iconHidden}
+                  {showPassword
+                    ? t.password.iconVisible
+                    : t.password.iconHidden}
                 </button>
               </div>
             </div>
@@ -158,7 +164,7 @@ export default function Login() {
           {/* CREATE ACCOUNT */}
           <button
             type="button"
-            onClick={() => router.push("/register/")}
+            onClick={() => router.push(registerPath)}
             className="mt-4 w-full cursor-pointer rounded-xl border border-emerald-200 px-5 py-3.5 text-sm font-semibold text-emerald-700 transition hover:border-emerald-300 hover:bg-emerald-50"
           >
             {t.createAccount}
@@ -167,7 +173,7 @@ export default function Login() {
           {/* HOME */}
           <button
             type="button"
-            onClick={() => router.push("/")}
+            onClick={() => router.push(homePath)}
             className="mt-3 w-full cursor-pointer rounded-xl px-5 py-3 text-sm font-medium text-zinc-500 transition hover:bg-zinc-50 hover:text-zinc-700"
           >
             {t.backHome}
