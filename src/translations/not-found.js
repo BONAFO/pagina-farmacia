@@ -1,7 +1,3 @@
-// src/translations/NotFound.js
-// Textos fijos (y íconos) de src/app/not-found.js
-//
-// Solo texto e íconos: las clases y rutas quedan en el componente.
 
 const NotFound = {
   icon: "+",

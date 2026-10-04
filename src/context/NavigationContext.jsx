@@ -17,13 +17,16 @@ const navigation = {
 
   pages: [
     { name: "home", path: "/", slug: "Inicio" },
-    { name: "services", path: "/services", slug: "Servicios" },
-    { name: "about", path: "/about", slug: "Nosotros" },
-    { name: "contact", path: "/contact", slug: "Contacto" },
-    { name: "register", path: "/register", slug: "Registrarse" },
-    { name: "login", path: "/login", slug: "Ingresar" },
-    { name: "shipping", path: "/shipping", slug: "Envío" },
-    { name: "products", path: "/products", slug: "Productos" },
+    { name: "services", path: "/services", slug: "Servicios", inFoot: true },
+    { name: "about", path: "/about", slug: "Nosotros", inFoot: true },
+    { name: "contact", path: "/contact", slug: "Contacto", inFoot: true },
+    { name: "register", path: "/register", slug: "Registrarse", inFoot: false },
+    { name: "login", path: "/login", slug: "Ingresar", inFoot: true },
+    { name: "shipping", path: "/shipping", slug: "Envío", inFoot: true },
+    { name: "products", path: "/products", slug: "Productos", inFoot: true },
+    { name: "product", path: "/product", slug: "", inFoot: false },
+
+    
   ],
 };
 

@@ -1,10 +1,3 @@
-// src/translations/Footer.js
-// Textos fijos (y emojis) de src/components/Footer.jsx
-//
-// Solo texto e íconos: las clases y rutas quedan en el componente.
-// Los datos de contacto vienen de ./ContactData.
-// Los nombres de categorías y páginas no están acá: vienen de NavigationContext.
-
 import ContactData from "./ContactData";
 
 const Footer = {

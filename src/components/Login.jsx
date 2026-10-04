@@ -1,4 +1,3 @@
-// src/components/Login.jsx
 "use client";
 
 import { useState } from "react";
@@ -6,17 +5,6 @@ import { useRouter } from "next/navigation";
 import DemoModal from "../layouts/DemoModal";
 import t from "@/src/translations/Login";
 import { useNavigationHook } from "../hooks/Navigation";
-
-/**
- * Login
- *
- * Los textos e íconos viven en src/translations/Login.js. Acá quedan las
- * clases, las rutas y la lógica.
- *
- * Demo: no hay inicio de sesión real. Enviar el formulario o tocar
- * "¿Olvidaste tu contraseña?" abre DemoModal con el texto
- * correspondiente (t.modal.login / t.modal.forgotPassword).
- */
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);

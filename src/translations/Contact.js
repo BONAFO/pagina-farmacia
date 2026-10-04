@@ -1,10 +1,3 @@
-// src/translations/Contact.js
-// Textos fijos (y emojis) de src/components/Contact.jsx
-//
-// Solo texto e íconos: las clases y rutas quedan en el componente.
-// Los datos de contacto (info.items) vienen de ./ContactData.
-// El array `info.items` mantiene el mismo orden que INFO_STYLES del componente.
-
 import ContactData from "./ContactData";
 
 const Contact = {

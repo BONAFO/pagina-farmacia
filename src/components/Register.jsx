@@ -1,4 +1,3 @@
-// src/components/Register.jsx
 "use client";
 
 import { useState } from "react";
@@ -6,17 +5,6 @@ import { useRouter } from "next/navigation";
 import DemoModal from "../layouts/DemoModal";
 import t from "@/src/translations/Register";
 import { useNavigationHook } from "../hooks/Navigation";
-
-/**
- * Register
- *
- * Los textos e íconos viven en src/translations/Register.js. Acá quedan las
- * clases, las rutas y la lógica.
- *
- * Demo: no hay registro real. Los campos bloqueados (readOnly) abren
- * DemoModal al recibir el foco (t.modal.lockedField) y el envío del
- * formulario también (t.modal.register).
- */
 
 export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
