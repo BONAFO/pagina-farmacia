@@ -1,27 +1,8 @@
-// src/components/Contact.jsx
 "use client";
 
 import { useRouter } from "next/navigation";
 import t from "@/src/translations/Contact";
 import { useNavigationHook } from "../hooks/Navigation";
-
-/**
- * Contact (página "Contacto")
- *
- * Los textos y emojis viven en src/translations/Contact.js. Acá quedan las
- * clases y las rutas.
- *
- * Las 4 tarjetas de información se generan con t.info.items y se asocian
- * por posición con INFO_STYLES (la misma alternancia de estilos que antes:
- * verde claro, blanca, blanca, verde claro). Hay que mantener el mismo orden.
- *
- * Los nombres "Inicio" y "Servicios" de pages.find(...) no son textos
- * visibles: son identificadores que deben coincidir con los de
- * NavigationContext, por eso se quedan acá.
- */
-
-
-
 
 const INFO_STYLES = [
   "bg-emerald-50/50",

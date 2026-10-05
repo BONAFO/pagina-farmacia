@@ -1,15 +1,22 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
+
 import products from "../db/Products.db.json";
 import categories from "../db/Categories.db.json";
+
 import ProductCard from "./ProductCard";
+
+import ProductsTranslation from "../translations/Products";
+import { useNavigationHook } from "../hooks/Navigation";
 
 export default function Products() {
   const searchParams = useSearchParams();
+  const router = useRouter();
 
   const categoryParam = searchParams.get("category");
   const sortParam = searchParams.get("sort");
+  const productPath = useNavigationHook("product");
 
   const getCategorySlug = (name) => {
     return name
@@ -62,15 +69,15 @@ export default function Products() {
     <section className="w-full">
       <div className="mb-8">
         <p className="text-sm font-semibold uppercase tracking-wider text-[#3F7D5A]">
-          Catálogo
+          {ProductsTranslation.hero.badge}
         </p>
 
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
-          Nuestros productos
+          {ProductsTranslation.hero.title}
         </h1>
 
         <p className="mt-3 max-w-2xl text-sm leading-6 text-zinc-600 sm:text-base">
-          Encontrá productos de farmacia, cuidado personal y bienestar.
+          {ProductsTranslation.hero.description}
         </p>
       </div>
 
@@ -83,26 +90,25 @@ export default function Products() {
       ) : (
         <div className="flex min-h-[350px] flex-col items-center justify-center rounded-2xl border border-[#D7E8DC] bg-[#F1F7F3] px-6 py-12 text-center">
           <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-3xl shadow-sm">
-            🔍
+            {ProductsTranslation.empty.icon}
           </div>
 
           <h2 className="mt-5 text-xl font-bold text-zinc-900">
-            No encontramos productos
+            {ProductsTranslation.empty.title}
           </h2>
 
           <p className="mt-2 max-w-md text-sm leading-6 text-zinc-600">
-            No hay productos disponibles para los filtros seleccionados. Probá
-            con otra categoría u ordenamiento.
+            {ProductsTranslation.empty.description}
           </p>
 
           <button
             type="button"
             onClick={() => {
-              window.location.href = "/product";
+              router.push(productPath);
             }}
             className="mt-6 cursor-pointer rounded-xl bg-[#3F7D5A] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#356B4C]"
           >
-            Ver todos los productos
+            {ProductsTranslation.empty.button}
           </button>
         </div>
       )}

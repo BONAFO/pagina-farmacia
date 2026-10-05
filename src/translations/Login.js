@@ -1,7 +1,3 @@
-// src/translations/Login.js
-// Textos fijos (y íconos) de src/components/Login.jsx
-//
-// Solo texto e íconos: las clases y rutas quedan en el componente.
 
 const Login = {
   brand: {

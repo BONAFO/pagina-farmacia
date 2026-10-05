@@ -1,8 +1,3 @@
-// src/translations/About.js
-// Textos fijos (y emojis) de src/components/About.jsx
-//
-// Solo texto e íconos: las clases y rutas quedan en el componente.
-// El array `cards` mantiene el mismo orden que CARD_STYLES del componente.
 
 const About = {
   hero: {

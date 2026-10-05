@@ -3,6 +3,7 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { useProductsModal } from "../context/ProductsModalContext";
 import sortOptions from "../db/Sort.db.json";
+import { useNavigationHook } from "../hooks/Navigation";
 
 export default function SortModal() {
   const { setModalVisible } = useProductsModal();
@@ -10,13 +11,14 @@ export default function SortModal() {
   const searchParams = useSearchParams();
 
   const currentSort = searchParams.get("sort");
+  const productsPath = useNavigationHook("products");
 
   const handleSort = (option) => {
     const params = new URLSearchParams(searchParams.toString());
 
     params.set("sort", option.id);
 
-    router.push(`/products?${params.toString()}`);
+    router.push(`${productsPath}?${params.toString()}`);
     setModalVisible("");
   };
 
@@ -27,7 +29,7 @@ export default function SortModal() {
 
     const query = params.toString();
 
-    router.push(query ? `/products?${query}` : "/products");
+    router.push(query ? `${productsPath}?${query}` : productsPath);
     setModalVisible("");
   };
 

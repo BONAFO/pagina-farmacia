@@ -1,4 +1,3 @@
-// src/components/Footer.jsx
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -10,19 +9,7 @@ import {
 } from "../hooks/Navigation";
 import categories from "../db/Categories.db.json";
 import products from "../db/Products.db.json";
-
-/**
- * Footer
- *
- * Los textos y emojis viven en src/translations/Footer.js. Acá quedan las
- * clases y las rutas.
- *
- * Los datos de contacto (sección "Contacto") llegan a través de Footer.js,
- * que los importa desde src/translations/ContactData.js.
- *
- * Los nombres de las categorías y de las páginas (secciones "Categorías" e
- * "Información") salen de NavigationContext, no del archivo de textos.
- */
+import { navigate } from "next/dist/client/components/segment-cache/navigation";
 
 export default function Footer() {
   const router = useRouter();
@@ -47,7 +34,6 @@ export default function Footer() {
 
   const categoryNavigation = useCategoryNavigationHook();
 
-  
   return (
     <footer className="border-t border-emerald-900 bg-emerald-950 text-white">
       <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-10">
@@ -101,16 +87,20 @@ export default function Footer() {
             </h3>
 
             <div className="mt-4 flex flex-col gap-3">
-              {pages.map((page) => (
-                <button
-                  key={page.slug}
-                  type="button"
-                  onClick={() => navigate(page.path)}
-                  className="w-fit cursor-pointer text-left text-sm text-emerald-100/60 transition hover:text-emerald-400"
-                >
-                  {page.slug}
-                </button>
-              ))}
+              {pages.map((page) =>
+                page.inFoot ? (
+                  <button
+                    key={page.slug}
+                    type="button"
+                    onClick={() =>  router.push(page.path)}
+                    className="w-fit cursor-pointer text-left text-sm text-emerald-100/60 transition hover:text-emerald-400"
+                  >
+                    {page.slug}
+                  </button>
+                ) : (
+                  ""
+                ),
+              )}
             </div>
           </div>
 

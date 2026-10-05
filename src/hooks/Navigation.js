@@ -3,7 +3,7 @@
 import { useNavigation } from "../context/NavigationContext";
 
 /**
- * @param {"home" | "services" | "contact" | "register" | "login" | "shipping" | "products" | "about"} path
+ * @param {"home" | "services" | "contact" | "register" | "login" | "shipping" | "products" | "about" | "product"} path
  */
 
 export const useNavigationHook = (path) => {
@@ -31,6 +31,9 @@ export const useNavigationHook = (path) => {
 
         case "products":
             return pages.find((page) => page.name === "products")?.path;
+
+        case "product":
+            return pages.find((page) => page.name === "product")?.path;
 
         case "about":
             return pages.find((page) => page.name === "about")?.path;

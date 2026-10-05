@@ -1,8 +1,3 @@
-// src/translations/Register.js
-// Textos fijos (y íconos) de src/components/Register.jsx
-//
-// Solo texto e íconos: las clases y rutas quedan en el componente.
-
 const Register = {
     brand: {
         logo: "+",

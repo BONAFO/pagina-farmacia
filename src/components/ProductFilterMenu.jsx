@@ -1,39 +1,31 @@
 "use client";
 
-import { useState } from "react";
 import { useRouter } from "next/navigation";
+
 import FiltersModal from "./FiltersModal";
 import SortModal from "./SortModal";
+
 import { useProductsModal } from "../context/ProductsModalContext";
-import products from "../db/Products.db.json";
+import { useNavigationHook } from "../hooks/Navigation";
+import { useProductSearch } from "../hooks/ProductSearch";
 
 export default function ProductFilterMenu() {
   const { setModalVisible } = useProductsModal();
   const router = useRouter();
-  const [search, setSearch] = useState("");
 
-  const searchResults =
-    search.trim() === ""
-      ? []
-      : products
-          .filter((product) => {
-            const value = search.toLowerCase().trim();
+  const productPath = useNavigationHook("product");
+  const productsPath = useNavigationHook("products");
 
-            return (
-              product.name.toLowerCase().includes(value) ||
-              product.brand.toLowerCase().includes(value)
-            );
-          })
-          .slice(0, 10);
+  const { search, setSearch, searchResults, clearSearch } = useProductSearch();
 
   const handleProductClick = (id) => {
-    setSearch("");
-    router.push(`/product?id=${id}`);
+    clearSearch();
+    router.push(`${productPath}/${id}`);
   };
 
   const clearFilters = () => {
-    setSearch("");
-    router.push("/products");
+    clearSearch();
+    router.push(productsPath);
   };
 
   return (
