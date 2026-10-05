@@ -1,25 +1,23 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
 import DemoModal from "../layouts/DemoModal";
-
-const MAX_QTY = 99;
+import useProductHook from "../hooks/main/Product";
 
 export default function Product({ product }) {
-  const router = useRouter();
-  const [quantity, setQuantity] = useState(1);
-  const [showDemo, setShowDemo] = useState(false);
-
-  if (!product) {
-    return null;
-  }
-
-  const { name, brand, price, image } = product;
-
-  const decrease = () => setQuantity((q) => Math.max(1, q - 1));
-  const increase = () => setQuantity((q) => Math.min(MAX_QTY, q + 1));
-
+  const {
+    decrease,
+    increase,
+    name,
+    brand,
+    price,
+    image,
+    router,
+    quantity,
+    showDemo,
+    setShowDemo,
+    MAX_QTY,
+  } = useProductHook(product);
+  
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#F6FAF7] to-white">
       <section className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 sm:py-10 lg:px-8">

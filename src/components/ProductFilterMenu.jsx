@@ -1,33 +1,18 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-
+import useProductFilterMenuHook from "../hooks/main/ProductFilterMenu";
 import FiltersModal from "./FiltersModal";
 import SortModal from "./SortModal";
 
-import { useProductsModal } from "../context/ProductsModalContext";
-import { useNavigationHook } from "../hooks/Navigation";
-import { useProductSearch } from "../hooks/ProductSearch";
-
 export default function ProductFilterMenu() {
-  const { setModalVisible } = useProductsModal();
-  const router = useRouter();
-
-  const productPath = useNavigationHook("product");
-  const productsPath = useNavigationHook("products");
-
-  const { search, setSearch, searchResults, clearSearch } = useProductSearch();
-
-  const handleProductClick = (id) => {
-    clearSearch();
-    router.push(`${productPath}/${id}`);
-  };
-
-  const clearFilters = () => {
-    clearSearch();
-    router.push(productsPath);
-  };
-
+  const {
+    search,
+    setSearch,
+    searchResults,
+    handleProductClick,
+    clearFilters,
+    setModalVisible,
+  } = useProductFilterMenuHook();
   return (
     <section className="relative w-full rounded-2xl border border-[#D7E8DC] bg-white p-4 shadow-sm sm:p-5">
       {/* BUSCADOR */}

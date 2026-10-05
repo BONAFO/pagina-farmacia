@@ -1,46 +1,16 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
-import { useProductsModal } from "../context/ProductsModalContext";
 import categories from "../db/Categories.db.json";
-import { useNavigationHook } from "../hooks/Navigation";
+import useFiltersModalHook from "../hooks/main/FiltersModal";
 
 export default function FiltersModal() {
-  const { setModalVisible } = useProductsModal();
-  const router = useRouter();
-  const searchParams = useSearchParams();
-
-  const productsPath = useNavigationHook("products");
-
-  const currentCategory = searchParams.get("category");
-
-  const getCategorySlug = (name) => {
-    return name
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/\s+/g, "-");
-  };
-
-  const handleCategory = (category) => {
-    const slug = getCategorySlug(category.name);
-
-    const params = new URLSearchParams(searchParams.toString());
-    params.set("category", slug);
-
-    router.push(`${productsPath}?${params.toString()}`);
-    setModalVisible("");
-  };
-
-  const clearFilters = () => {
-    const params = new URLSearchParams(searchParams.toString());
-    params.delete("category");
-
-    const query = params.toString();
-
-    router.push(query ? `${productsPath}}?${query}` : "/products");
-    setModalVisible("");
-  };
+  const {
+    clearFilters,
+    getCategorySlug,
+    handleCategory,
+    setModalVisible,
+    currentCategory,
+  } = useFiltersModalHook();
 
   return (
     <>

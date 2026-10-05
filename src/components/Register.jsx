@@ -1,46 +1,24 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
 import DemoModal from "../layouts/DemoModal";
 import t from "@/src/translations/Register";
-import { useNavigationHook } from "../hooks/Navigation";
+import useRegisterHook from "../hooks/main/Register";
 
 export default function Register() {
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
-  const [showDemo, setShowDemo] = useState(false);
-  const [demoContent, setDemoContent] = useState({
-    title: "",
-    message: "",
-  });
-
-  const router = useRouter();
-
-  const homePath = useNavigationHook("home");
-  const loginPath = useNavigationHook("login");
-  
-  const openModal = (title, message) => {
-    setDemoContent({
-      title,
-      message,
-    });
-
-    setShowDemo(true);
-  };
-
-  const handleLockedFieldFocus = (event) => {
-    event.currentTarget.blur();
-
-    openModal(t.modal.lockedField.title, t.modal.lockedField.message);
-  };
-
-  const handleRegister = (event) => {
-    event.preventDefault();
-
-    openModal(t.modal.register.title, t.modal.register.message);
-  };
+  const {
+    showPassword,
+    setShowPassword,
+    showConfirmPassword,
+    setShowConfirmPassword,
+    showDemo,
+    setShowDemo,
+    demoContent,
+    handleLockedFieldFocus,
+    handleRegister,
+    homePath,
+    loginPath,
+    navigate,
+  } = useRegisterHook();
 
   return (
     <main className="min-h-[calc(100vh-80px)] bg-emerald-50/40 px-5 py-12 sm:px-8">
@@ -329,7 +307,7 @@ export default function Register() {
 
             <button
               type="button"
-              onClick={() => router.push(loginPath)}
+              onClick={() => navigate(loginPath)}
               className="ml-1 cursor-pointer text-sm font-semibold text-emerald-600 transition hover:text-emerald-700"
             >
               {t.login}
@@ -339,7 +317,7 @@ export default function Register() {
           {/* HOME */}
           <button
             type="button"
-            onClick={() => router.push(homePath)}
+            onClick={() => navigate(homePath)}
             className="mt-4 w-full cursor-pointer rounded-xl px-5 py-3 text-sm font-medium text-zinc-500 transition hover:bg-zinc-50 hover:text-zinc-700"
           >
             {t.backHome}

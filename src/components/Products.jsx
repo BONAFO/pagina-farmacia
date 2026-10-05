@@ -1,70 +1,11 @@
 "use client";
 
-import { useSearchParams, useRouter } from "next/navigation";
-
-import products from "../db/Products.db.json";
-import categories from "../db/Categories.db.json";
-
 import ProductCard from "./ProductCard";
-
 import ProductsTranslation from "../translations/Products";
-import { useNavigationHook } from "../hooks/Navigation";
+import useProductsHook from "../hooks/main/Products";
 
 export default function Products() {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-
-  const categoryParam = searchParams.get("category");
-  const sortParam = searchParams.get("sort");
-  const productPath = useNavigationHook("product");
-
-  const getCategorySlug = (name) => {
-    return name
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/\s+/g, "-");
-  };
-
-  let filteredProducts = categoryParam
-    ? products.filter((product) => {
-        const category = categories.find(
-          (category) => category.id === product.categoryId,
-        );
-
-        return category && getCategorySlug(category.name) === categoryParam;
-      })
-    : [...products];
-
-  switch (sortParam) {
-    case "1":
-      filteredProducts.sort((a, b) => a.name.localeCompare(b.name, "es"));
-      break;
-
-    case "2":
-      filteredProducts.sort((a, b) => b.name.localeCompare(a.name, "es"));
-      break;
-
-    case "3":
-      filteredProducts.sort((a, b) => a.price - b.price);
-      break;
-
-    case "4":
-      filteredProducts.sort((a, b) => b.price - a.price);
-      break;
-
-    case "5":
-      filteredProducts.sort((a, b) => b.id - a.id);
-      break;
-
-    case "6":
-      filteredProducts.sort((a, b) => a.id - b.id);
-      break;
-
-    default:
-      break;
-  }
-
+  const { filteredProducts, productPath, navigate } = useProductsHook();
   return (
     <section className="w-full">
       <div className="mb-8">
@@ -104,7 +45,7 @@ export default function Products() {
           <button
             type="button"
             onClick={() => {
-              router.push(productPath);
+              navigate(productPath);
             }}
             className="mt-6 cursor-pointer rounded-xl bg-[#3F7D5A] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#356B4C]"
           >

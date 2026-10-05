@@ -1,31 +1,20 @@
 "use client";
 
-import categories from "../db/Categories.db.json";
+import useHomeHook from "../hooks/main/Home";
 import HomeTranslation from "../translations/Home";
-import {
-  useCategoryNavigationHook,
-  useNavigationHook,
-} from "../hooks/Navigation";
 
 export default function Home() {
-  const productsPath = useNavigationHook("products");
-  const servicesPath = useNavigationHook("services");
-  const aboutPath = useNavigationHook("about");
-  const contactPath = useNavigationHook("contact");
-
-  const categoryNavigation = useCategoryNavigationHook();
-
-  const visibleCategories = categories.slice(0, 6);
-
-  const navigate = (path) => {
-    window.location.assign(path);
-  };
-
+  const {
+    categoryNavigation,
+    visibleCategories,
+    aboutPath,
+    contactPath,
+    navigate,
+    productsPath,
+    servicesPath,
+  } = useHomeHook();
   return (
-    <main className="min-h-screen bg-white text-zinc-900">
-      {/* =========================================================
-          HERO
-      ========================================================== */}
+    <div className="min-h-screen bg-white text-zinc-900">
       <section className="relative overflow-hidden border-b border-emerald-100 bg-[#F1F7F3]">
         <div className="pointer-events-none absolute -right-32 -top-32 h-[420px] w-[420px] rounded-full bg-emerald-200/40 blur-3xl" />
 
@@ -84,18 +73,14 @@ export default function Home() {
                 <div
                   key={stat.label}
                   className={
-                    index > 0
-                      ? "border-l border-emerald-200 pl-5"
-                      : ""
+                    index > 0 ? "border-l border-emerald-200 pl-5" : ""
                   }
                 >
                   <p className="text-2xl font-bold text-zinc-900">
                     {stat.value}
                   </p>
 
-                  <p className="mt-1 text-xs text-zinc-500">
-                    {stat.label}
-                  </p>
+                  <p className="mt-1 text-xs text-zinc-500">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -159,9 +144,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =========================================================
-          CATEGORÍAS
-      ========================================================== */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div>
@@ -192,9 +174,7 @@ export default function Home() {
             <button
               key={category.id}
               type="button"
-              onClick={() =>
-                navigate(categoryNavigation(category))
-              }
+              onClick={() => navigate(categoryNavigation(category))}
               className="group cursor-pointer rounded-2xl border border-zinc-200 bg-white p-5 text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-lg hover:shadow-emerald-900/5"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-2xl transition group-hover:bg-emerald-100">
@@ -217,9 +197,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =========================================================
-          PRESENTACIÓN
-      ========================================================== */}
       <section className="border-y border-zinc-200 bg-zinc-50">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-2 lg:items-center lg:px-10 lg:py-28">
           <div>
@@ -280,9 +257,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =========================================================
-          SERVICIOS
-      ========================================================== */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
         <div className="relative overflow-hidden rounded-3xl border border-emerald-200 bg-[#E8F3EC]">
           <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-emerald-200/50 blur-3xl" />
@@ -315,9 +289,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* =========================================================
-          CTA FINAL
-      ========================================================== */}
       <section className="px-5 pb-20 sm:px-8 lg:px-10 lg:pb-28">
         <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-[#356B4C]">
           <div className="pointer-events-none absolute -right-20 -top-24 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
@@ -347,6 +318,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

@@ -1,23 +1,10 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import t from "@/src/translations/Contact";
-import { useNavigationHook } from "../hooks/Navigation";
-
-const INFO_STYLES = [
-  "bg-emerald-50/50",
-  "bg-white shadow-sm",
-  "bg-white shadow-sm",
-  "bg-emerald-50/50",
-];
+import useContactHook from "../hooks/main/Contact";
 
 export default function Contact() {
-  const router = useRouter();
-
-  const homePath = useNavigationHook("home");
-
-  const servicesPath = useNavigationHook("services");
-
+  const { INFO_STYLES, homePath, navigate, servicesPath } = useContactHook();
 
   return (
     <section className="w-full bg-white">
@@ -91,9 +78,7 @@ export default function Contact() {
 
           {/* FORM */}
           <div className="rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm sm:p-8">
-            <h2 className="text-2xl font-bold text-zinc-900">
-              {t.form.title}
-            </h2>
+            <h2 className="text-2xl font-bold text-zinc-900">{t.form.title}</h2>
 
             <p className="mt-2 text-sm leading-6 text-zinc-500">
               {t.form.description}
@@ -171,7 +156,7 @@ export default function Contact() {
 
           <button
             type="button"
-            onClick={() => router.push(servicesPath)}
+            onClick={() => navigate(servicesPath)}
             className="mt-6 cursor-pointer rounded-xl bg-white px-6 py-3 font-semibold text-emerald-700 transition hover:bg-emerald-50"
           >
             {t.cta.buttons.services}
@@ -179,7 +164,7 @@ export default function Contact() {
 
           <button
             type="button"
-            onClick={() => router.push(homePath)}
+            onClick={() => navigate(homePath)}
             className="ml-3 cursor-pointer rounded-xl border border-emerald-300 px-6 py-3 font-semibold text-white transition hover:bg-emerald-700"
           >
             {t.cta.buttons.home}

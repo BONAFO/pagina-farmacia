@@ -1,5 +1,6 @@
 "use client"
 
+import { useRouter } from "next/navigation";
 import { useNavigation } from "../context/NavigationContext";
 
 /**
@@ -58,3 +59,20 @@ export const useCategoryNavigationHook = () => {
         return `${productsPath}?category=${slug}`;
     };
 };
+
+export const useNavigate = () => {
+
+    const router = useRouter();
+
+    return {
+        navigate: (path, cb = () => { }, after = false) => {
+            if (after) {
+                router.push(path)
+                cb()
+                return ""
+            }
+            cb()
+            router.push(path)
+        }
+    }
+}

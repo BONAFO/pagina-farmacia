@@ -1,38 +1,8 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import { useNavigation } from "../context/NavigationContext";
 import t from "@/src/translations/Footer";
-import {
-  useCategoryNavigationHook,
-  useNavigationHook,
-} from "../hooks/Navigation";
-import categories from "../db/Categories.db.json";
-import products from "../db/Products.db.json";
-import { navigate } from "next/dist/client/components/segment-cache/navigation";
+import useFooterHook from "../hooks/main/Footer";
 
 export default function Footer() {
-  const router = useRouter();
-
-  const { pages } = useNavigation();
-
-  const mainCategories = categories
-    .map((category) => ({
-      ...category,
-      productCount: products.filter(
-        (product) => product.categoryId === category.id,
-      ).length,
-    }))
-    .filter(
-      (category) =>
-        category.productCount > 0 && category.name.toLowerCase() !== "ofertas",
-    )
-    .sort((a, b) => b.productCount - a.productCount)
-    .slice(0, 6);
-
-  const homePath = useNavigationHook("home");
-
-  const categoryNavigation = useCategoryNavigationHook();
+  const { categoryNavigation, mainCategories, pages,homePath,navigate } = useFooterHook();
 
   return (
     <footer className="border-t border-emerald-900 bg-emerald-950 text-white">
@@ -42,7 +12,7 @@ export default function Footer() {
           <div>
             <button
               type="button"
-              onClick={() => router.push(homePath)}
+              onClick={() => navigate(homePath)}
               className="flex cursor-pointer items-center gap-2 text-left text-lg font-bold"
             >
               <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-500 text-lg">
@@ -71,7 +41,7 @@ export default function Footer() {
                 <button
                   key={category.path}
                   type="button"
-                  onClick={() => router.push(categoryNavigation(category))}
+                  onClick={() => navigate(categoryNavigation(category))}
                   className="w-fit cursor-pointer text-left text-sm text-emerald-100/60 transition hover:text-emerald-400"
                 >
                   {category.name}
@@ -92,7 +62,7 @@ export default function Footer() {
                   <button
                     key={page.slug}
                     type="button"
-                    onClick={() =>  router.push(page.path)}
+                    onClick={() => navigate(page.path)}
                     className="w-fit cursor-pointer text-left text-sm text-emerald-100/60 transition hover:text-emerald-400"
                   >
                     {page.slug}
