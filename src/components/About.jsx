@@ -1,20 +1,10 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import t from "@/src/translations/About";
-import { useNavigationHook } from "../hooks/Navigation";
+import useAboutHook from "../hooks/main/About";
 
 export default function About() {
-  const CARD_STYLES = [
-    "bg-emerald-50",
-    "bg-white shadow-sm",
-    "bg-white shadow-sm",
-    "bg-emerald-50",
-  ];
-  const router = useRouter();
-
-  const contactPath = useNavigationHook("contact");
-  const servicesPath = useNavigationHook("services");
+  const { CARD_STYLES, contactPath, navigate, servicesPath } = useAboutHook();
 
   return (
     <section className="w-full bg-white">
@@ -37,7 +27,7 @@ export default function About() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <button
                 type="button"
-                onClick={() => router.push(contactPath)}
+                onClick={() => navigate(contactPath)}
                 className="cursor-pointer rounded-xl bg-emerald-600 px-6 py-3 font-semibold text-white transition hover:bg-emerald-700"
               >
                 {t.buttons.contact}
@@ -45,7 +35,7 @@ export default function About() {
 
               <button
                 type="button"
-                onClick={() => router.push(servicesPath)}
+                onClick={() => navigate(servicesPath)}
                 className="cursor-pointer rounded-xl border border-emerald-200 bg-white px-6 py-3 font-semibold text-emerald-700 transition hover:bg-emerald-50"
               >
                 {t.buttons.services}
@@ -102,7 +92,7 @@ export default function About() {
           </p>
           <button
             type="button"
-            onClick={() => router.push(contactPath)}
+            onClick={() => navigate(contactPath)}
             className="mt-7 cursor-pointer rounded-xl bg-white px-6 py-3 font-semibold text-emerald-700 transition hover:bg-emerald-50"
           >
             {t.buttons.contact}

@@ -1,38 +1,15 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
-import { useProductsModal } from "../context/ProductsModalContext";
 import sortOptions from "../db/Sort.db.json";
-import { useNavigationHook } from "../hooks/Navigation";
+import useSortModalHook from "../hooks/main/SortModal";
 
 export default function SortModal() {
-  const { setModalVisible } = useProductsModal();
-  const router = useRouter();
-  const searchParams = useSearchParams();
-
-  const currentSort = searchParams.get("sort");
-  const productsPath = useNavigationHook("products");
-
-  const handleSort = (option) => {
-    const params = new URLSearchParams(searchParams.toString());
-
-    params.set("sort", option.id);
-
-    router.push(`${productsPath}?${params.toString()}`);
-    setModalVisible("");
-  };
-
-  const clearSort = () => {
-    const params = new URLSearchParams(searchParams.toString());
-
-    params.delete("sort");
-
-    const query = params.toString();
-
-    router.push(query ? `${productsPath}?${query}` : productsPath);
-    setModalVisible("");
-  };
-
+  const {
+    setModalVisible,
+    currentSort,
+    handleSort,
+    clearSort,
+  } = useSortModalHook();
   return (
     <>
       {/* FONDO */}
