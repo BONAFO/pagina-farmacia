@@ -1,4 +1,4 @@
-import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 import products from "../../db/Products.db.json";
 import categories from "../../db/Categories.db.json";
