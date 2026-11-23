@@ -27,7 +27,7 @@ export default function Shipping() {
         </header>
 
         {/* FORMAS DE RECIBIR EL PEDIDO */}
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-6">
+        <div id="preview" className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-6">
           {ShippingTranslation.deliveryOptions.map((option) => (
             <article
               key={option.title}

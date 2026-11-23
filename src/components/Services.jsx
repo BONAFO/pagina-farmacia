@@ -9,7 +9,7 @@ export default function Services() {
   return (
     <main className="min-h-screen bg-white text-zinc-900">
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-emerald-100 bg-emerald-50">
+      <section id="preview" className="relative overflow-hidden border-b border-emerald-100 bg-emerald-50">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.12),transparent_40%)]" />
 
         <div className="relative mx-auto max-w-7xl px-5 pb-16 pt-32 sm:px-8 sm:pb-20 lg:px-10 lg:pt-40">

@@ -28,7 +28,7 @@ export default function Contact() {
       </div>
 
       {/* CONTACT INFO */}
-      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
+      <div id="preview" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-2">
           {/* INFO */}
           <div>
