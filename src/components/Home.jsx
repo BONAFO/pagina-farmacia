@@ -197,7 +197,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-zinc-200 bg-zinc-50">
+      <section id="preview" className="border-y border-zinc-200 bg-zinc-50">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 lg:grid-cols-2 lg:items-center lg:px-10 lg:py-28">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#3F7D5A]">

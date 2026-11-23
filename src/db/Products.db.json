@@ -1,4 +1,3 @@
-
 [
   {
     "id": 1,
@@ -6,7 +5,7 @@
     "brand": "Genérico",
     "categoryId": 1,
     "price": 3200,
-    "image": "/products/paracetamol-500.jpg"
+    "image": "https://www.chemistcounterdirect.co.uk/media/catalog/product/cache/ac0eae1a1c822032d1a77034ee169508/a/_/a_5010441000298.jpg"
   },
   {
     "id": 2,
@@ -14,7 +13,7 @@
     "brand": "Genérico",
     "categoryId": 1,
     "price": 4100,
-    "image": "/products/paracetamol-1g.jpg"
+    "image": "https://www.chemistcounterdirect.co.uk/media/catalog/product/cache/ac0eae1a1c822032d1a77034ee169508/a/_/a_5010441000298.jpg"
   },
   {
     "id": 3,
@@ -22,7 +21,7 @@
     "brand": "Genérico",
     "categoryId": 1,
     "price": 6200,
-    "image": "/products/paracetamol-50.jpg"
+    "image": "https://www.chemistcounterdirect.co.uk/media/catalog/product/cache/ac0eae1a1c822032d1a77034ee169508/a/_/a_5010441000298.jpg"
   },
   {
     "id": 4,
@@ -30,7 +29,7 @@
     "brand": "Genérico",
     "categoryId": 1,
     "price": 3900,
-    "image": "/products/dipirona.jpg"
+    "image": "https://www.chemistcounterdirect.co.uk/media/catalog/product/cache/ac0eae1a1c822032d1a77034ee169508/a/_/a_5010441000298.jpg"
   },
   {
     "id": 5,
@@ -38,7 +37,7 @@
     "brand": "Genérico",
     "categoryId": 1,
     "price": 5100,
-    "image": "/products/dipirona-30.jpg"
+    "image": "https://www.chemistcounterdirect.co.uk/media/catalog/product/cache/ac0eae1a1c822032d1a77034ee169508/a/_/a_5010441000298.jpg"
   },
   {
     "id": 6,
@@ -46,7 +45,7 @@
     "brand": "Genérico",
     "categoryId": 2,
     "price": 4500,
-    "image": "/products/ibuprofeno-400.jpg"
+    "image": "https://ueeshop.ly200-cdn.com/u_file/UPAU/UPAU555/2507/products/08/21eabca160.png"
   },
   {
     "id": 7,
@@ -54,7 +53,7 @@
     "brand": "Genérico",
     "categoryId": 2,
     "price": 5600,
-    "image": "/products/ibuprofeno-600.jpg"
+    "image": "https://ueeshop.ly200-cdn.com/u_file/UPAU/UPAU555/2507/products/08/21eabca160.png"
   },
   {
     "id": 8,
@@ -62,7 +61,7 @@
     "brand": "Genérico",
     "categoryId": 2,
     "price": 8900,
-    "image": "/products/ibuprofeno-50.jpg"
+    "image": "https://ueeshop.ly200-cdn.com/u_file/UPAU/UPAU555/2507/products/08/21eabca160.png"
   },
   {
     "id": 9,
@@ -70,7 +69,7 @@
     "brand": "Genérico",
     "categoryId": 2,
     "price": 4700,
-    "image": "/products/naproxeno.jpg"
+    "image": "https://ueeshop.ly200-cdn.com/u_file/UPAU/UPAU555/2507/products/08/21eabca160.png"
   },
   {
     "id": 10,
@@ -78,7 +77,7 @@
     "brand": "Genérico",
     "categoryId": 2,
     "price": 4300,
-    "image": "/products/diclofenac.jpg"
+    "image": "https://ueeshop.ly200-cdn.com/u_file/UPAU/UPAU555/2507/products/08/21eabca160.png"
   },
   {
     "id": 11,
@@ -86,7 +85,7 @@
     "brand": "FarmaPlus",
     "categoryId": 3,
     "price": 5200,
-    "image": "/products/antigripal-dia.jpg"
+    "image": "https://www.strepsils.com.au/static/f77dce95986ffeabf60fcecf52220ab6/8ee95/2511281012StrepsilsDryCoughHoneyLemonFrontwithBottleSpoon-ezgif.com-resize.webp"
   },
   {
     "id": 12,
@@ -94,7 +93,7 @@
     "brand": "FarmaPlus",
     "categoryId": 3,
     "price": 5500,
-    "image": "/products/antigripal-noche.jpg"
+    "image": "https://www.strepsils.com.au/static/f77dce95986ffeabf60fcecf52220ab6/8ee95/2511281012StrepsilsDryCoughHoneyLemonFrontwithBottleSpoon-ezgif.com-resize.webp"
   },
   {
     "id": 13,
@@ -102,7 +101,7 @@
     "brand": "FarmaPlus",
     "categoryId": 3,
     "price": 6900,
-    "image": "/products/antigripal-forte.jpg"
+    "image": "https://www.strepsils.com.au/static/f77dce95986ffeabf60fcecf52220ab6/8ee95/2511281012StrepsilsDryCoughHoneyLemonFrontwithBottleSpoon-ezgif.com-resize.webp"
   },
   {
     "id": 14,
@@ -110,7 +109,7 @@
     "brand": "FarmaPlus",
     "categoryId": 3,
     "price": 4800,
-    "image": "/products/jarabe-tos.jpg"
+    "image": "https://www.strepsils.com.au/static/f77dce95986ffeabf60fcecf52220ab6/8ee95/2511281012StrepsilsDryCoughHoneyLemonFrontwithBottleSpoon-ezgif.com-resize.webp"
   },
   {
     "id": 15,
@@ -118,7 +117,7 @@
     "brand": "FarmaPlus",
     "categoryId": 3,
     "price": 3600,
-    "image": "/products/pastillas-garganta.jpg"
+    "image": "https://www.strepsils.com.au/static/f77dce95986ffeabf60fcecf52220ab6/8ee95/2511281012StrepsilsDryCoughHoneyLemonFrontwithBottleSpoon-ezgif.com-resize.webp"
   },
   {
     "id": 16,
@@ -126,7 +125,7 @@
     "brand": "Digest",
     "categoryId": 4,
     "price": 3400,
-    "image": "/products/antiacido.jpg"
+    "image": "https://www.almax.mx/img/almax_masticables.webp"
   },
   {
     "id": 17,
@@ -134,7 +133,7 @@
     "brand": "Digest",
     "categoryId": 4,
     "price": 2900,
-    "image": "/products/sales-digestivas.jpg"
+    "image": "https://www.almax.mx/img/almax_masticables.webp"
   },
   {
     "id": 18,
@@ -142,7 +141,7 @@
     "brand": "Genérico",
     "categoryId": 4,
     "price": 3800,
-    "image": "/products/simeticona.jpg"
+    "image": "https://es.vitabright.co/cdn/shop/collections/leaf_graphic_vitabright_copy_-_Copy-removebg-preview.png?v=1747142696"
   },
   {
     "id": 19,
@@ -150,7 +149,7 @@
     "brand": "Digest",
     "categoryId": 4,
     "price": 4100,
-    "image": "/products/laxante.jpg"
+    "image": "https://es.vitabright.co/cdn/shop/collections/leaf_graphic_vitabright_copy_-_Copy-removebg-preview.png?v=1747142696"
   },
   {
     "id": 20,
@@ -158,7 +157,7 @@
     "brand": "NaturalLife",
     "categoryId": 4,
     "price": 7200,
-    "image": "/products/fibra.jpg"
+    "image": "https://es.vitabright.co/cdn/shop/collections/leaf_graphic_vitabright_copy_-_Copy-removebg-preview.png?v=1747142696"
   },
   {
     "id": 21,
@@ -166,7 +165,7 @@
     "brand": "Genérico",
     "categoryId": 5,
     "price": 3600,
-    "image": "/products/loratadina.jpg"
+    "image": "https://www.strepsils.com.au/static/f77dce95986ffeabf60fcecf52220ab6/8ee95/2511281012StrepsilsDryCoughHoneyLemonFrontwithBottleSpoon-ezgif.com-resize.webp"
   },
   {
     "id": 22,
@@ -174,7 +173,7 @@
     "brand": "Genérico",
     "categoryId": 5,
     "price": 3900,
-    "image": "/products/cetirizina.jpg"
+    "image": "https://www.strepsils.com.au/static/f77dce95986ffeabf60fcecf52220ab6/8ee95/2511281012StrepsilsDryCoughHoneyLemonFrontwithBottleSpoon-ezgif.com-resize.webp"
   },
   {
     "id": 23,
@@ -182,7 +181,7 @@
     "brand": "FarmaPlus",
     "categoryId": 5,
     "price": 5200,
-    "image": "/products/antialergico.jpg"
+    "image": "https://www.strepsils.com.au/static/f77dce95986ffeabf60fcecf52220ab6/8ee95/2511281012StrepsilsDryCoughHoneyLemonFrontwithBottleSpoon-ezgif.com-resize.webp"
   },
   {
     "id": 24,
@@ -190,7 +189,7 @@
     "brand": "FarmaPlus",
     "categoryId": 5,
     "price": 4300,
-    "image": "/products/spray-nasal.jpg"
+    "image": "https://totalliquidators.net/cdn/shop/files/164088_res2hoq5_1200x1200.jpg?v=1724643236"
   },
   {
     "id": 25,
@@ -198,7 +197,7 @@
     "brand": "FarmaPlus",
     "categoryId": 5,
     "price": 3200,
-    "image": "/products/solucion-nasal.jpg"
+    "image": "https://totalliquidators.net/cdn/shop/files/164088_res2hoq5_1200x1200.jpg?v=1724643236"
   },
   {
     "id": 26,
@@ -206,7 +205,7 @@
     "brand": "VitaPlus",
     "categoryId": 6,
     "price": 5800,
-    "image": "/products/vitamina-c.jpg"
+    "image": "https://honour.health/cdn/shop/files/Mobile_Homepage_-_Combined_1080x840_c7e5539c-e86f-466f-b41d-b02959875674.png?v=1768968399&width=1500"
   },
   {
     "id": 27,
@@ -214,7 +213,7 @@
     "brand": "VitaPlus",
     "categoryId": 6,
     "price": 6900,
-    "image": "/products/vitamina-c-1g.jpg"
+    "image": "https://honour.health/cdn/shop/files/Mobile_Homepage_-_Combined_1080x840_c7e5539c-e86f-466f-b41d-b02959875674.png?v=1768968399&width=1500"
   },
   {
     "id": 28,
@@ -222,7 +221,7 @@
     "brand": "VitaPlus",
     "categoryId": 6,
     "price": 6100,
-    "image": "/products/complejo-b.jpg"
+    "image": "https://honour.health/cdn/shop/files/Mobile_Homepage_-_Combined_1080x840_c7e5539c-e86f-466f-b41d-b02959875674.png?v=1768968399&width=1500"
   },
   {
     "id": 29,
@@ -230,7 +229,7 @@
     "brand": "VitaPlus",
     "categoryId": 6,
     "price": 8500,
-    "image": "/products/multivitaminico.jpg"
+    "image": "https://honour.health/cdn/shop/files/Mobile_Homepage_-_Combined_1080x840_c7e5539c-e86f-466f-b41d-b02959875674.png?v=1768968399&width=1500"
   },
   {
     "id": 30,
@@ -238,7 +237,7 @@
     "brand": "VitaPlus",
     "categoryId": 6,
     "price": 9200,
-    "image": "/products/magnesio.jpg"
+    "image": "https://es.vitabright.co/cdn/shop/collections/leaf_graphic_vitabright_copy_-_Copy-removebg-preview.png?v=1747142696"
   },
   {
     "id": 31,
@@ -246,7 +245,7 @@
     "brand": "CleanCare",
     "categoryId": 7,
     "price": 2800,
-    "image": "/products/alcohol-gel.jpg"
+    "image": "https://pielcosmetics.com/upload/iblock/06f/06ffc457fe91d64edb74fafd881901ac.jpg"
   },
   {
     "id": 32,
@@ -254,7 +253,7 @@
     "brand": "CleanCare",
     "categoryId": 7,
     "price": 3100,
-    "image": "/products/jabon-liquido.jpg"
+    "image": "https://pielcosmetics.com/upload/iblock/06f/06ffc457fe91d64edb74fafd881901ac.jpg"
   },
   {
     "id": 33,
@@ -262,7 +261,7 @@
     "brand": "CleanCare",
     "categoryId": 7,
     "price": 1900,
-    "image": "/products/jabon-antibacterial.jpg"
+    "image": "https://pielcosmetics.com/upload/iblock/06f/06ffc457fe91d64edb74fafd881901ac.jpg"
   },
   {
     "id": 34,
@@ -270,7 +269,7 @@
     "brand": "Fresh",
     "categoryId": 7,
     "price": 4200,
-    "image": "/products/desodorante.jpg"
+    "image": "https://pielcosmetics.com/upload/iblock/06f/06ffc457fe91d64edb74fafd881901ac.jpg"
   },
   {
     "id": 35,
@@ -278,7 +277,7 @@
     "brand": "Fresh",
     "categoryId": 7,
     "price": 3500,
-    "image": "/products/desodorante-rollon.jpg"
+    "image": "https://pielcosmetics.com/upload/iblock/06f/06ffc457fe91d64edb74fafd881901ac.jpg"
   },
   {
     "id": 36,
@@ -286,7 +285,7 @@
     "brand": "DentCare",
     "categoryId": 8,
     "price": 3300,
-    "image": "/products/pasta-dental.jpg"
+    "image": "https://dentaid-cms.fra1.digitaloceanspaces.com/media-prod/d5dd17a1759d27ecc4324d2967c9e35d.jpg"
   },
   {
     "id": 37,
@@ -294,7 +293,7 @@
     "brand": "DentCare",
     "categoryId": 8,
     "price": 3900,
-    "image": "/products/pasta-blanqueadora.jpg"
+    "image": "https://dentaid-cms.fra1.digitaloceanspaces.com/media-prod/d5dd17a1759d27ecc4324d2967c9e35d.jpg"
   },
   {
     "id": 38,
@@ -302,7 +301,7 @@
     "brand": "DentCare",
     "categoryId": 8,
     "price": 2800,
-    "image": "/products/cepillo-suave.jpg"
+    "image": "https://evo.com.pl/public/upload/sellasist_cache/thumb_xlarge_09adf83c4692621f0d7643a361115b56.jpg"
   },
   {
     "id": 39,
@@ -310,7 +309,7 @@
     "brand": "DentCare",
     "categoryId": 8,
     "price": 2800,
-    "image": "/products/cepillo-medio.jpg"
+    "image": "https://evo.com.pl/public/upload/sellasist_cache/thumb_xlarge_09adf83c4692621f0d7643a361115b56.jpg"
   },
   {
     "id": 40,
@@ -318,7 +317,7 @@
     "brand": "DentCare",
     "categoryId": 8,
     "price": 2600,
-    "image": "/products/hilo-dental.jpg"
+    "image": "https://dentaid-cms.fra1.digitaloceanspaces.com/media-prod/d5dd17a1759d27ecc4324d2967c9e35d.jpg"
   },
   {
     "id": 41,
@@ -326,7 +325,7 @@
     "brand": "DermaCare",
     "categoryId": 9,
     "price": 7600,
-    "image": "/products/crema-facial.jpg"
+    "image": "https://www.riversol.com/cdn/shop/files/HydratingCleanser_DMC-Normal.png?v=1780507620&width=1946"
   },
   {
     "id": 42,
@@ -334,7 +333,7 @@
     "brand": "DermaCare",
     "categoryId": 9,
     "price": 6900,
-    "image": "/products/crema-corporal.jpg"
+    "image": "https://www.riversol.com/cdn/shop/files/HydratingCleanser_DMC-Normal.png?v=1780507620&width=1946"
   },
   {
     "id": 43,
@@ -342,7 +341,7 @@
     "brand": "DermaCare",
     "categoryId": 9,
     "price": 7200,
-    "image": "/products/gel-facial.jpg"
+    "image": "https://www.riversol.com/cdn/shop/files/HydratingCleanser_DMC-Normal.png?v=1780507620&width=1946"
   },
   {
     "id": 44,
@@ -350,7 +349,7 @@
     "brand": "DermaCare",
     "categoryId": 9,
     "price": 3900,
-    "image": "/products/crema-manos.jpg"
+    "image": "https://www.riversol.com/cdn/shop/files/HydratingCleanser_DMC-Normal.png?v=1780507620&width=1946"
   },
   {
     "id": 45,
@@ -358,7 +357,7 @@
     "brand": "DermaCare",
     "categoryId": 9,
     "price": 2500,
-    "image": "/products/balsamo-labial.jpg"
+    "image": "https://cdn.aarp.net/content/dam/aarp/entertainment/beauty-and-style/2020/03/1140-beauty-tips-going-green-everyday-basics-2-esp.jpg"
   },
   {
     "id": 46,
@@ -366,7 +365,7 @@
     "brand": "SunCare",
     "categoryId": 10,
     "price": 9800,
-    "image": "/products/protector-fps30.jpg"
+    "image": "https://d22fxaf9t8d39k.cloudfront.net/5bf92c35ca134c0e4b2235014debc986993bebdbed1af9de11afa926ff504187310784.png"
   },
   {
     "id": 47,
@@ -374,7 +373,7 @@
     "brand": "SunCare",
     "categoryId": 10,
     "price": 11500,
-    "image": "/products/protector-fps50.jpg"
+    "image": "https://d22fxaf9t8d39k.cloudfront.net/5bf92c35ca134c0e4b2235014debc986993bebdbed1af9de11afa926ff504187310784.png"
   },
   {
     "id": 48,
@@ -382,7 +381,7 @@
     "brand": "SunCare",
     "categoryId": 10,
     "price": 12500,
-    "image": "/products/protector-infantil.jpg"
+    "image": "https://d22fxaf9t8d39k.cloudfront.net/5bf92c35ca134c0e4b2235014debc986993bebdbed1af9de11afa926ff504187310784.png"
   },
   {
     "id": 49,
@@ -390,7 +389,7 @@
     "brand": "SunCare",
     "categoryId": 10,
     "price": 10900,
-    "image": "/products/protector-facial.jpg"
+    "image": "https://d22fxaf9t8d39k.cloudfront.net/5bf92c35ca134c0e4b2235014debc986993bebdbed1af9de11afa926ff504187310784.png"
   },
   {
     "id": 50,
@@ -398,7 +397,7 @@
     "brand": "SunCare",
     "categoryId": 10,
     "price": 3600,
-    "image": "/products/protector-labial.jpg"
+    "image": "https://www.organiercare.com/cdn/shop/files/sunscreen_05ad1714-a3c8-4e38-ac84-545a5a44f4e2.jpg?v=1766762081&width=1946"
   },
   {
     "id": 51,
@@ -406,7 +405,7 @@
     "brand": "FirstCare",
     "categoryId": 11,
     "price": 2400,
-    "image": "/products/curitas.jpg"
+    "image": "https://d32ssqnhftowzc.cloudfront.net/6KB3RFRWCNEY-1667990069362-1.jpeg"
   },
   {
     "id": 52,
@@ -414,7 +413,7 @@
     "brand": "FirstCare",
     "categoryId": 11,
     "price": 2900,
-    "image": "/products/gasa-esteril.jpg"
+    "image": "https://d32ssqnhftowzc.cloudfront.net/6KB3RFRWCNEY-1667990069362-1.jpeg"
   },
   {
     "id": 53,
@@ -422,7 +421,7 @@
     "brand": "FirstCare",
     "categoryId": 11,
     "price": 3200,
-    "image": "/products/venda.jpg"
+    "image": "https://d32ssqnhftowzc.cloudfront.net/6KB3RFRWCNEY-1667990069362-1.jpeg"
   },
   {
     "id": 54,
@@ -430,7 +429,7 @@
     "brand": "FirstCare",
     "categoryId": 11,
     "price": 3100,
-    "image": "/products/cinta-medica.jpg"
+    "image": "https://d32ssqnhftowzc.cloudfront.net/6KB3RFRWCNEY-1667990069362-1.jpeg"
   },
   {
     "id": 55,
@@ -438,7 +437,7 @@
     "brand": "FirstCare",
     "categoryId": 11,
     "price": 2100,
-    "image": "/products/agua-oxigenada.jpg"
+    "image": "https://www.selfimed.fr/cdn/shop/collections/pansements-soins-medicaux-compresses-certifie-CE_4486fe8b-2f78-4912-8ff2-d93c728e0765_1200x800.png?v=1776856475"
   },
   {
     "id": 56,
@@ -446,7 +445,7 @@
     "brand": "BabyCare",
     "categoryId": 12,
     "price": 8900,
-    "image": "/products/panales-p.jpg"
+    "image": "https://www.travelingbaby.com/media/catalog/product/cache/1/image/1200x/040ec09b1e35df139433887a97daa66f/d/i/diaper_wipe_pack_6_2_1.png"
   },
   {
     "id": 57,
@@ -454,7 +453,7 @@
     "brand": "BabyCare",
     "categoryId": 12,
     "price": 9400,
-    "image": "/products/panales-m.jpg"
+    "image": "https://www.travelingbaby.com/media/catalog/product/cache/1/image/1200x/040ec09b1e35df139433887a97daa66f/d/i/diaper_wipe_pack_6_2_1.png"
   },
   {
     "id": 58,
@@ -462,7 +461,7 @@
     "brand": "BabyCare",
     "categoryId": 12,
     "price": 9900,
-    "image": "/products/panales-g.jpg"
+    "image": "https://www.travelingbaby.com/media/catalog/product/cache/1/image/1200x/040ec09b1e35df139433887a97daa66f/d/i/diaper_wipe_pack_6_2_1.png"
   },
   {
     "id": 59,
@@ -470,7 +469,7 @@
     "brand": "BabyCare",
     "categoryId": 12,
     "price": 3500,
-    "image": "/products/toallitas-bebe.jpg"
+    "image": "https://www.travelingbaby.com/media/catalog/product/cache/1/image/1200x/040ec09b1e35df139433887a97daa66f/d/i/diaper_wipe_pack_6_2_1.png"
   },
   {
     "id": 60,
@@ -478,7 +477,7 @@
     "brand": "BabyCare",
     "categoryId": 12,
     "price": 5200,
-    "image": "/products/crema-bebe.jpg"
+    "image": "https://farmacialoreto.it/image/cache/catalog/products/473184/beauty-case-da-viaggio-dreams-set-beige-suavinex-2-735x735.jpg"
   },
   {
     "id": 61,
@@ -486,7 +485,7 @@
     "brand": "HairCare",
     "categoryId": 13,
     "price": 4900,
-    "image": "/products/shampoo.jpg"
+    "image": "https://ueeshop.ly200-cdn.com/u_file/UPAX/UPAX841/2409/products/04/7aac4c6619.jpg"
   },
   {
     "id": 62,
@@ -494,7 +493,7 @@
     "brand": "HairCare",
     "categoryId": 13,
     "price": 6200,
-    "image": "/products/shampoo-anticaspa.jpg"
+    "image": "https://ueeshop.ly200-cdn.com/u_file/UPAX/UPAX841/2409/products/04/7aac4c6619.jpg"
   },
   {
     "id": 63,
@@ -502,7 +501,7 @@
     "brand": "HairCare",
     "categoryId": 13,
     "price": 5100,
-    "image": "/products/acondicionador.jpg"
+    "image": "https://ueeshop.ly200-cdn.com/u_file/UPAX/UPAX841/2409/products/04/7aac4c6619.jpg"
   },
   {
     "id": 64,
@@ -510,7 +509,7 @@
     "brand": "HairCare",
     "categoryId": 13,
     "price": 4600,
-    "image": "/products/crema-peinar.jpg"
+    "image": "https://ueeshop.ly200-cdn.com/u_file/UPAX/UPAX841/2409/products/04/7aac4c6619.jpg"
   },
   {
     "id": 65,
@@ -518,7 +517,7 @@
     "brand": "HairCare",
     "categoryId": 13,
     "price": 5900,
-    "image": "/products/tratamiento-capilar.jpg"
+    "image": "https://ueeshop.ly200-cdn.com/u_file/UPAX/UPAX841/2409/products/04/7aac4c6619.jpg"
   },
   {
     "id": 66,
@@ -526,7 +525,7 @@
     "brand": "FemCare",
     "categoryId": 14,
     "price": 3600,
-    "image": "/products/toallitas-normales.jpg"
+    "image": "https://thehoneypot.co/cdn/shop/files/AtlantaDream_21May2025_Draft2.jpg?v=1751302109"
   },
   {
     "id": 67,
@@ -534,7 +533,7 @@
     "brand": "FemCare",
     "categoryId": 14,
     "price": 3900,
-    "image": "/products/toallitas-nocturnas.jpg"
+    "image": "https://thehoneypot.co/cdn/shop/files/AtlantaDream_21May2025_Draft2.jpg?v=1751302109"
   },
   {
     "id": 68,
@@ -542,7 +541,7 @@
     "brand": "FemCare",
     "categoryId": 14,
     "price": 3200,
-    "image": "/products/protectores-diarios.jpg"
+    "image": "https://thehoneypot.co/cdn/shop/files/AtlantaDream_21May2025_Draft2.jpg?v=1751302109"
   },
   {
     "id": 69,
@@ -550,7 +549,7 @@
     "brand": "FemCare",
     "categoryId": 14,
     "price": 4300,
-    "image": "/products/tampones.jpg"
+    "image": "https://thehoneypot.co/cdn/shop/files/AtlantaDream_21May2025_Draft2.jpg?v=1751302109"
   },
   {
     "id": 70,
@@ -558,7 +557,7 @@
     "brand": "FemCare",
     "categoryId": 14,
     "price": 4800,
-    "image": "/products/gel-intimo.jpg"
+    "image": "https://thehoneypot.co/cdn/shop/files/AtlantaDream_21May2025_Draft2.jpg?v=1751302109"
   },
   {
     "id": 71,
@@ -566,7 +565,7 @@
     "brand": "HealthTech",
     "categoryId": 15,
     "price": 6800,
-    "image": "/products/termometro.jpg"
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-81z1k-mi4iajijta839b"
   },
   {
     "id": 72,
@@ -574,7 +573,7 @@
     "brand": "HealthTech",
     "categoryId": 15,
     "price": 28500,
-    "image": "/products/tensiometro.jpg"
+    "image": "https://store.healthcare.omron.co.jp/product/woman/media/menopause/assets/products/HCR-7104.png"
   },
   {
     "id": 73,
@@ -582,7 +581,7 @@
     "brand": "HealthTech",
     "categoryId": 15,
     "price": 17900,
-    "image": "/products/oximetro.jpg"
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-81z1k-mi4iajijta839b"
   },
   {
     "id": 74,
@@ -590,7 +589,7 @@
     "brand": "HealthTech",
     "categoryId": 15,
     "price": 4200,
-    "image": "/products/jeringas.jpg"
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-81z1k-mi4iajijta839b"
   },
   {
     "id": 75,
@@ -598,7 +597,7 @@
     "brand": "HealthTech",
     "categoryId": 15,
     "price": 5600,
-    "image": "/products/guantes-nitrilo.jpg"
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-81z1k-mi4iajijta839b"
   },
   {
     "id": 76,
@@ -606,7 +605,7 @@
     "brand": "Genérico",
     "categoryId": 1,
     "price": 4300,
-    "image": "/products/paracetamol-infantil.jpg"
+    "image": "https://www.chemistcounterdirect.co.uk/media/catalog/product/cache/ac0eae1a1c822032d1a77034ee169508/a/_/a_5010441000298.jpg"
   },
   {
     "id": 77,
@@ -614,7 +613,7 @@
     "brand": "Genérico",
     "categoryId": 2,
     "price": 4700,
-    "image": "/products/ibuprofeno-infantil.jpg"
+    "image": "https://ueeshop.ly200-cdn.com/u_file/UPAU/UPAU555/2507/products/08/21eabca160.png"
   },
   {
     "id": 78,
@@ -622,7 +621,7 @@
     "brand": "DermaCare",
     "categoryId": 9,
     "price": 5400,
-    "image": "/products/crema-golpes.jpg"
+    "image": "https://www.riversol.com/cdn/shop/files/HydratingCleanser_DMC-Normal.png?v=1780507620&width=1946"
   },
   {
     "id": 79,
@@ -630,7 +629,7 @@
     "brand": "DermaCare",
     "categoryId": 9,
     "price": 5900,
-    "image": "/products/gel-muscular.jpg"
+    "image": "https://cdn.aarp.net/content/dam/aarp/entertainment/beauty-and-style/2020/03/1140-beauty-tips-going-green-everyday-basics-2-esp.jpg"
   },
   {
     "id": 80,
@@ -638,7 +637,7 @@
     "brand": "FirstCare",
     "categoryId": 11,
     "price": 3400,
-    "image": "/products/solucion-fisiologica.jpg"
+    "image": "https://www.selfimed.fr/cdn/shop/collections/pansements-soins-medicaux-compresses-certifie-CE_4486fe8b-2f78-4912-8ff2-d93c728e0765_1200x800.png?v=1776856475"
   },
   {
     "id": 81,
@@ -646,7 +645,7 @@
     "brand": "FirstCare",
     "categoryId": 11,
     "price": 2700,
-    "image": "/products/algodon.jpg"
+    "image": "https://d32ssqnhftowzc.cloudfront.net/6KB3RFRWCNEY-1667990069362-1.jpeg"
   },
   {
     "id": 82,
@@ -654,7 +653,7 @@
     "brand": "DermaCare",
     "categoryId": 9,
     "price": 5800,
-    "image": "/products/agua-micelar.jpg"
+    "image": "https://www.riversol.com/cdn/shop/files/HydratingCleanser_DMC-Normal.png?v=1780507620&width=1946"
   },
   {
     "id": 83,
@@ -662,7 +661,7 @@
     "brand": "DermaCare",
     "categoryId": 9,
     "price": 7900,
-    "image": "/products/crema-nutritiva.jpg"
+    "image": "https://www.riversol.com/cdn/shop/files/HydratingCleanser_DMC-Normal.png?v=1780507620&width=1946"
   },
   {
     "id": 84,
@@ -670,7 +669,7 @@
     "brand": "VitaPlus",
     "categoryId": 6,
     "price": 6700,
-    "image": "/products/vitamina-d.jpg"
+    "image": "https://es.vitabright.co/cdn/shop/collections/leaf_graphic_vitabright_copy_-_Copy-removebg-preview.png?v=1747142696"
   },
   {
     "id": 85,
@@ -678,7 +677,7 @@
     "brand": "VitaPlus",
     "categoryId": 6,
     "price": 5400,
-    "image": "/products/zinc.jpg"
+    "image": "https://es.vitabright.co/cdn/shop/collections/leaf_graphic_vitabright_copy_-_Copy-removebg-preview.png?v=1747142696"
   },
   {
     "id": 86,
@@ -686,7 +685,7 @@
     "brand": "VitaPlus",
     "categoryId": 6,
     "price": 9800,
-    "image": "/products/omega-3.jpg"
+    "image": "https://es.vitabright.co/cdn/shop/collections/leaf_graphic_vitabright_copy_-_Copy-removebg-preview.png?v=1747142696"
   },
   {
     "id": 87,
@@ -694,7 +693,7 @@
     "brand": "DentCare",
     "categoryId": 8,
     "price": 4700,
-    "image": "/products/colutorio.jpg"
+    "image": "https://dentaid-cms.fra1.digitaloceanspaces.com/media-prod/d5dd17a1759d27ecc4324d2967c9e35d.jpg"
   },
   {
     "id": 88,
@@ -702,7 +701,7 @@
     "brand": "DentCare",
     "categoryId": 8,
     "price": 2500,
-    "image": "/products/cepillo-infantil.jpg"
+    "image": "https://evo.com.pl/public/upload/sellasist_cache/thumb_xlarge_09adf83c4692621f0d7643a361115b56.jpg"
   },
   {
     "id": 89,
@@ -710,7 +709,7 @@
     "brand": "DentCare",
     "categoryId": 8,
     "price": 2900,
-    "image": "/products/pasta-infantil.jpg"
+    "image": "https://dentaid-cms.fra1.digitaloceanspaces.com/media-prod/d5dd17a1759d27ecc4324d2967c9e35d.jpg"
   },
   {
     "id": 90,
@@ -718,7 +717,7 @@
     "brand": "CleanCare",
     "categoryId": 7,
     "price": 4500,
-    "image": "/products/jabon-antibacterial-liquido.jpg"
+    "image": "https://pielcosmetics.com/upload/iblock/06f/06ffc457fe91d64edb74fafd881901ac.jpg"
   },
   {
     "id": 91,
@@ -726,7 +725,7 @@
     "brand": "BabyCare",
     "categoryId": 12,
     "price": 4800,
-    "image": "/products/shampoo-infantil.jpg"
+    "image": "https://farmacialoreto.it/image/cache/catalog/products/473184/beauty-case-da-viaggio-dreams-set-beige-suavinex-2-735x735.jpg"
   },
   {
     "id": 92,
@@ -734,7 +733,7 @@
     "brand": "BabyCare",
     "categoryId": 12,
     "price": 4200,
-    "image": "/products/colonia-infantil.jpg"
+    "image": "https://farmacialoreto.it/image/cache/catalog/products/473184/beauty-case-da-viaggio-dreams-set-beige-suavinex-2-735x735.jpg"
   },
   {
     "id": 93,
@@ -742,7 +741,7 @@
     "brand": "DermaCare",
     "categoryId": 9,
     "price": 4300,
-    "image": "/products/crema-manos-reparadora.jpg"
+    "image": "https://www.riversol.com/cdn/shop/files/HydratingCleanser_DMC-Normal.png?v=1780507620&width=1946"
   },
   {
     "id": 94,
@@ -750,7 +749,7 @@
     "brand": "SunCare",
     "categoryId": 10,
     "price": 13900,
-    "image": "/products/protector-fps50-200.jpg"
+    "image": "https://d22fxaf9t8d39k.cloudfront.net/5bf92c35ca134c0e4b2235014debc986993bebdbed1af9de11afa926ff504187310784.png"
   },
   {
     "id": 95,
@@ -758,7 +757,7 @@
     "brand": "SunCare",
     "categoryId": 10,
     "price": 5200,
-    "image": "/products/repelente.jpg"
+    "image": "https://www.organiercare.com/cdn/shop/files/sunscreen_05ad1714-a3c8-4e38-ac84-545a5a44f4e2.jpg?v=1766762081&width=1946"
   },
   {
     "id": 96,
@@ -766,7 +765,7 @@
     "brand": "HealthTech",
     "categoryId": 15,
     "price": 3200,
-    "image": "/products/mascarillas.jpg"
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-81z1k-mi4iajijta839b"
   },
   {
     "id": 97,
@@ -774,7 +773,7 @@
     "brand": "HealthTech",
     "categoryId": 15,
     "price": 18900,
-    "image": "/products/balanza.jpg"
+    "image": "https://store.healthcare.omron.co.jp/product/woman/media/menopause/assets/products/HCR-7104.png"
   },
   {
     "id": 98,
@@ -782,7 +781,7 @@
     "brand": "FirstCare",
     "categoryId": 11,
     "price": 3900,
-    "image": "/products/frio-instantaneo.jpg"
+    "image": "https://www.selfimed.fr/cdn/shop/collections/pansements-soins-medicaux-compresses-certifie-CE_4486fe8b-2f78-4912-8ff2-d93c728e0765_1200x800.png?v=1776856475"
   },
   {
     "id": 99,
@@ -790,7 +789,7 @@
     "brand": "HealthTech",
     "categoryId": 15,
     "price": 15900,
-    "image": "/products/termometro-infrarrojo.jpg"
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-81z1k-mi4iajijta839b"
   },
   {
     "id": 100,
@@ -798,7 +797,6 @@
     "brand": "FirstCare",
     "categoryId": 11,
     "price": 2600,
-    "image": "/products/alcohol-etilico.jpg"
+    "image": "https://www.selfimed.fr/cdn/shop/collections/pansements-soins-medicaux-compresses-certifie-CE_4486fe8b-2f78-4912-8ff2-d93c728e0765_1200x800.png?v=1776856475"
   }
 ]
-

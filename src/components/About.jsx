@@ -46,7 +46,7 @@ export default function About() {
       </div>
 
       {/* ABOUT */}
-      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
+      <div id="preview" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div>
             <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-emerald-600">

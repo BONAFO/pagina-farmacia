@@ -21,38 +21,39 @@ export default function Products() {
           {ProductsTranslation.hero.description}
         </p>
       </div>
-
-      {filteredProducts.length > 0 ? (
-        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      ) : (
-        <div className="flex min-h-[350px] flex-col items-center justify-center rounded-2xl border border-[#D7E8DC] bg-[#F1F7F3] px-6 py-12 text-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-3xl shadow-sm">
-            {ProductsTranslation.empty.icon}
+      <div id="preview">
+        {filteredProducts.length > 0 ? (
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">
+            {filteredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
           </div>
+        ) : (
+          <div className="flex min-h-[350px] flex-col items-center justify-center rounded-2xl border border-[#D7E8DC] bg-[#F1F7F3] px-6 py-12 text-center">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-3xl shadow-sm">
+              {ProductsTranslation.empty.icon}
+            </div>
 
-          <h2 className="mt-5 text-xl font-bold text-zinc-900">
-            {ProductsTranslation.empty.title}
-          </h2>
+            <h2 className="mt-5 text-xl font-bold text-zinc-900">
+              {ProductsTranslation.empty.title}
+            </h2>
 
-          <p className="mt-2 max-w-md text-sm leading-6 text-zinc-600">
-            {ProductsTranslation.empty.description}
-          </p>
+            <p className="mt-2 max-w-md text-sm leading-6 text-zinc-600">
+              {ProductsTranslation.empty.description}
+            </p>
 
-          <button
-            type="button"
-            onClick={() => {
-              navigate(productPath);
-            }}
-            className="mt-6 cursor-pointer rounded-xl bg-[#3F7D5A] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#356B4C]"
-          >
-            {ProductsTranslation.empty.button}
-          </button>
-        </div>
-      )}
+            <button
+              type="button"
+              onClick={() => {
+                navigate(productPath);
+              }}
+              className="mt-6 cursor-pointer rounded-xl bg-[#3F7D5A] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#356B4C]"
+            >
+              {ProductsTranslation.empty.button}
+            </button>
+          </div>
+        )}
+      </div>
     </section>
   );
 }
